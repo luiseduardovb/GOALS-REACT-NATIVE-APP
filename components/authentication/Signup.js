@@ -19,7 +19,7 @@ const Signup = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signup(user);
-    if (authStore.user) navigation.replace("Profile", { user: user });
+    if (authStore.user) navigation.navigate("Profile", { user: user });
   };
 
   return (

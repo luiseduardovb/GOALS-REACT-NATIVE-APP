@@ -25,14 +25,18 @@ import {
   BackgroundImage,
 } from "./styles";
 import authStore from "../../stores/authStore";
+import Signout from "../authentication/Signout";
 
 const Profile = ({ route }) => {
   const { user } = route.params;
-  if (!user) return <Spinner />;
+  if (!authStore.user) return <Spinner />;
   return (
     <SafeAreaView>
       <ScrollView>
         <UserInfo>
+          <Right style={{ marginLeft: 320 }}>
+            <Signout />
+          </Right>
           <Body>
             <ProfileImage
               source={{
@@ -44,7 +48,6 @@ const Profile = ({ route }) => {
               <FirstName>{authStore.user.firstName}</FirstName>
               <LastName> {authStore.user.lastName}</LastName>
             </Name>
-            <Right></Right>
             <Text>@{user.username}</Text>
           </Body>
         </UserInfo>
