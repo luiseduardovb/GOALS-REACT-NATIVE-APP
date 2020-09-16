@@ -29,6 +29,25 @@ class AuthStore {
       console.log("signin error:", error);
     }
   };
+
+  signout = async () => {
+    delete instance.defaults.headers.common.Authorization;
+    await AsyncStorage.removeItem("myToken");
+    this.user = null;
+  };
+  checkForToken = async () => {
+    const token = await AsyncStorage.getItem("myToken");
+    console.log("checkForToken -> token", token);
+    if (token) {
+      const currentTime = Date.now() / 1000;
+      const user = decode(token);
+      if (user.exp >= currentTime) {
+        this.setUser(token);
+      } else {
+        this.signout();
+      }
+    }
+  };
 }
 
 decorate(AuthStore, {
