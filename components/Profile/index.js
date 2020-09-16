@@ -21,13 +21,14 @@ import {
   LastName,
   Name,
   ProfileImage,
+  StyledView,
   UserName,
   BackgroundImage,
 } from "./styles";
 import authStore from "../../stores/authStore";
 
-const Profile = ({ route }) => {
-  const { user } = route.params;
+const Profile = () => {
+  const { user } = authStore;
   if (!user) return <Spinner />;
   return (
     <SafeAreaView>
@@ -41,13 +42,16 @@ const Profile = ({ route }) => {
               }}
             />
             <Name>
-              <FirstName>{authStore.user.firstName}</FirstName>
-              <LastName> {authStore.user.lastName}</LastName>
+              <FirstName>{user.firstName}</FirstName>
+              <LastName> {user.lastName}</LastName>
             </Name>
             <Right></Right>
             <Text>@{user.username}</Text>
           </Body>
         </UserInfo>
+        <StyledView>
+          <Text>ENTER DATA HERE</Text>
+        </StyledView>
       </ScrollView>
     </SafeAreaView>
   );

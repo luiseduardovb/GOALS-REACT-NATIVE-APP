@@ -1,23 +1,28 @@
 import React from "react";
+import { Text } from "native-base";
 
 // Styling
 import { HomeImageBackground, ButtonStyling, SignInStyle } from "./styles";
+
+//Stores
 import authStore from "../../stores/authStore";
 
-const Start = ({ navigation }) => {
+const Home = ({ navigation }) => {
   const user = authStore.user;
   return (
     <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>
         {user ? (
           <SignInStyle
-            onPress={() => navigation.navigate("Profile", { user: user })}
+            onPress={() =>
+              navigation.navigate("BottomTabNavigator", { user: user })
+            }
           >
-            Profile
+            Skip Sign In
           </SignInStyle>
         ) : (
           <SignInStyle onPress={() => navigation.navigate("Signin")}>
-            Sign in
+            <Text> Sign in</Text>
           </SignInStyle>
         )}
       </ButtonStyling>
@@ -25,4 +30,4 @@ const Start = ({ navigation }) => {
   );
 };
 
-export default Start;
+export default Home;

@@ -4,21 +4,21 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { observer } from "mobx-react";
 
 //components
-import Intro from "../authentication/Intro";
+import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
-import Profile from "../Profile";
+import BottomTabNavigator from "./BottomTabNavigator";
 
 const { Navigator, Screen } = createStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Navigator initialRouteName="Intro">
-      <Screen name="Intro" component={Intro} options={{ headerShown: false }} />
+    <Navigator initialRouteName="Home">
+      <Screen name="Home" component={Home} options={{ headerShown: false }} />
 
       <Screen
-        name="Profile"
-        component={Profile}
+        name="BottomTabNavigator"
+        component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
 
