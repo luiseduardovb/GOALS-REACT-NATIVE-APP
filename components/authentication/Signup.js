@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 
 //store
-import authStore from "../stores/authStore";
+import authStore from "../../stores/authStore";
 
 //styles
 import {
