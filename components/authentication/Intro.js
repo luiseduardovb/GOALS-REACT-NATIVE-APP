@@ -6,7 +6,7 @@ import authStore from "../../stores/authStore";
 
 const Start = ({ navigation }) => {
   return (
-    <HomeImageBackground source={require(`../../target.jpg`)}>
+    <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>
         {authStore.user ? (
           <SignInStyle onPress={() => navigation.navigate("Goals")}>
