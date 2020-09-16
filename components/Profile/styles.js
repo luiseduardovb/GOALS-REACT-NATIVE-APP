@@ -36,3 +36,7 @@ export const LastName = styled.Text`
   font-weight: bold;
   color: black;
 `;
+
+export const StyledView = styled.View`
+  margin: auto;
+`;

@@ -30,7 +30,7 @@ const Signin = ({ navigation }) => {
     await authStore.signin(user);
 
     if (authStore.user) {
-      navigation.replace("Profile", { user: user });
+      navigation.navigate("BottomTabNavigator", { user: user });
     } else {
       setUser({ ...(user.isValidUser = false) });
     }
