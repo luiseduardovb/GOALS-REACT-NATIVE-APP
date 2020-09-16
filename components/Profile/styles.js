@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Image } from "react-native";
 
 export const UserInfo = styled.View`
   border-bottom-color: grey;
@@ -21,17 +22,17 @@ export const ProfileImage = styled(Image)`
 export const Name = styled.View`
   flex-direction: row;
   margin-bottom: 3px;
-  color: white;
+  color: black;
 `;
 
 export const FirstName = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: black;
 `;
 
 export const LastName = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: black;
 `;

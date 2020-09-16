@@ -5,12 +5,15 @@ import { HomeImageBackground, ButtonStyling, SignInStyle } from "./styles";
 import authStore from "../../stores/authStore";
 
 const Start = ({ navigation }) => {
+  const user = authStore.user;
   return (
     <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>
-        {authStore.user ? (
-          <SignInStyle onPress={() => navigation.navigate("Goals")}>
-            Skip Sign in
+        {user ? (
+          <SignInStyle
+            onPress={() => navigation.navigate("Profile", { user: user })}
+          >
+            Profile
           </SignInStyle>
         ) : (
           <SignInStyle onPress={() => navigation.navigate("Signin")}>

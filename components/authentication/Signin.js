@@ -13,6 +13,7 @@ import {
 } from "./styles";
 import { Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import authStore from "../../stores/authStore";
 
 const Signin = ({ navigation }) => {
   const [user, setUser] = useState({
@@ -29,7 +30,7 @@ const Signin = ({ navigation }) => {
     await authStore.signin(user);
 
     if (authStore.user) {
-      <RootNavigator />;
+      navigation.replace("Profile", { user: user });
     } else {
       setUser({ ...(user.isValidUser = false) });
     }
