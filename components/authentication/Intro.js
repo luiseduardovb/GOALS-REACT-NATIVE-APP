@@ -2,7 +2,7 @@ import React from "react";
 
 // Styling
 import { HomeImageBackground, ButtonStyling, SignInStyle } from "./styles";
-import authStore from "../stores/authStore";
+import authStore from "../../stores/authStore";
 
 const Start = ({ navigation }) => {
   return (
