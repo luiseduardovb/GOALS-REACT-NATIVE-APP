@@ -11,7 +11,7 @@ export const Background = styled.View`
 `;
 
 export const ButtonStyling = styled.View`
-  height: 180%;
+  height: 145%;
   align-items: center;
   justify-content: center;
 `;
@@ -53,7 +53,7 @@ export const SignButton = styled.Text`
 `;
 
 export const SignInStyle = styled.Text`
-  color: black;
+  color: #eed3d3;
   font-size: 24;
   font-weight: bold;
   text-align: center;

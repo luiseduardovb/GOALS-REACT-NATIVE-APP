@@ -2,11 +2,11 @@ import React from "react";
 
 // Styling
 import { HomeImageBackground, ButtonStyling, SignInStyle } from "./styles";
-import authStore from "../stores/authStore";
+import authStore from "../../stores/authStore";
 
 const Start = ({ navigation }) => {
   return (
-    <HomeImageBackground source={require(`../../target.jpg`)}>
+    <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>
         {authStore.user ? (
           <SignInStyle onPress={() => navigation.navigate("Goals")}>
