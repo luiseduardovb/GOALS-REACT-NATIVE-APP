@@ -26,6 +26,7 @@ import {
   BackgroundImage,
 } from "./styles";
 import authStore from "../../stores/authStore";
+import Signout from "../authentication/Signout";
 
 const Profile = () => {
   const { user } = authStore;
@@ -34,6 +35,9 @@ const Profile = () => {
     <SafeAreaView>
       <ScrollView>
         <UserInfo>
+          <Right style={{ marginLeft: 320 }}>
+            <Signout />
+          </Right>
           <Body>
             <ProfileImage
               source={{
@@ -45,7 +49,6 @@ const Profile = () => {
               <FirstName>{user.firstName}</FirstName>
               <LastName> {user.lastName}</LastName>
             </Name>
-            <Right></Right>
             <Text>@{user.username}</Text>
           </Body>
         </UserInfo>

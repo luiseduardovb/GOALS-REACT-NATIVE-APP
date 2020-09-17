@@ -1,8 +1,16 @@
 import React from "react";
+import authStore from "../../stores/authStore";
+import { useNavigation } from "@react-navigation/native";
+import { observer } from "mobx-react";
 import { Icon } from "native-base";
 
 const Signout = () => {
-  return <Icon type="AntDesign" name="logout" />;
+  const navigation = useNavigation();
+  const submit = async () => {
+    await authStore.signout();
+    navigation.navigate("Intro");
+  };
+  return <Icon onPress={submit} type="AntDesign" name="logout" />;
 };
 
-export default Signout;
+export default observer(Signout);

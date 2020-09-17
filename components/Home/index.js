@@ -6,9 +6,11 @@ import { HomeImageBackground, ButtonStyling, SignInStyle } from "./styles";
 
 //Stores
 import authStore from "../../stores/authStore";
+import { Spinner } from "native-base";
 
 const Home = ({ navigation }) => {
   const user = authStore.user;
+
   return (
     <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>

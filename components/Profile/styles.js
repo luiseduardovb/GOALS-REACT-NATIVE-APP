@@ -11,7 +11,6 @@ export const BackgroundImage = styled.ImageBackground`
 `;
 
 export const ProfileImage = styled(Image)`
-  color: #c1b3d1;
   margin-top: 20px;
   margin-bottom: 10px;
   width: 90px;
