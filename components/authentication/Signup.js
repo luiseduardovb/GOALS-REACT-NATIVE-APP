@@ -19,8 +19,7 @@ const Signup = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signup(user);
-    if (authStore.user)
-      navigation.navigate("BottomTabNavigator", { user: user });
+    if (authStore.user) navigation.navigate("DrawerNavigator", { user: user });
   };
 
   return (

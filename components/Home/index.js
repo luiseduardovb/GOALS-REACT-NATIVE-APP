@@ -17,7 +17,7 @@ const Home = ({ navigation }) => {
         {user ? (
           <SignInStyle
             onPress={() =>
-              navigation.navigate("BottomTabNavigator", { user: user })
+              navigation.navigate("DrawerNavigator", { user: user })
             }
           >
             Skip Sign In
