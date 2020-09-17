@@ -2,17 +2,16 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
-import Profile from "../Profile";
-import BottomTabNavigator from "../Navigation/BottomTabNavigator";
+import Dashboard from "../Dashboard";
 
 const { Navigator, Screen } = createStackNavigator();
 
-const ProfileNavigator = () => {
+const DashboardNavigator = () => {
   return (
     <Navigator>
       <Screen
-        name="Profile"
-        component={Profile}
+        name="Dashboard"
+        component={Dashboard}
         options={{
           headerShown: false,
         }}
@@ -21,4 +20,4 @@ const ProfileNavigator = () => {
   );
 };
 
-export default ProfileNavigator;
+export default DashboardNavigator;

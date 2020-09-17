@@ -35,9 +35,9 @@ const Profile = () => {
     <SafeAreaView>
       <ScrollView>
         <UserInfo>
-          <Right style={{ marginLeft: 320 }}>
+          {/* <Right style={{ marginLeft: 320 }}>
             <Signout />
-          </Right>
+          </Right> */}
           <Body>
             <ProfileImage
               source={{

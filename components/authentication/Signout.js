@@ -6,10 +6,12 @@ import { Icon } from "native-base";
 
 const Signout = () => {
   const navigation = useNavigation();
+
   const submit = async () => {
     await authStore.signout();
-    navigation.navigate("Intro");
+    navigation.navigate("Home");
   };
+
   return <Icon onPress={submit} type="AntDesign" name="logout" />;
 };
 
