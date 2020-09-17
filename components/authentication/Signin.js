@@ -15,6 +15,8 @@ import { Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import authStore from "../../stores/authStore";
 
+// REVIEW: Organize your imports
+
 const Signin = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
