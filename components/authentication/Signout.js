@@ -4,6 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 import { observer } from "mobx-react";
 import { Icon } from "native-base";
 
+// REVIEW: Organize your imports
+
 const Signout = () => {
   const navigation = useNavigation();
   const submit = async () => {

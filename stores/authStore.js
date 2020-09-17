@@ -35,6 +35,7 @@ class AuthStore {
     await AsyncStorage.removeItem("myToken");
     this.user = null;
   };
+
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
     console.log("checkForToken -> token", token);

@@ -27,6 +27,8 @@ import {
 import authStore from "../../stores/authStore";
 import Signout from "../authentication/Signout";
 
+// REVIEW: cleanup your imports
+
 const Profile = ({ route }) => {
   const { user } = route.params;
   if (!authStore.user) return <Spinner />;
