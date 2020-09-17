@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "native-base";
 
@@ -7,11 +7,19 @@ import AddGoalNavigator from "./AddGoalNavigator";
 import ExploreNavigator from "./ExploreNavigator";
 import DashboardNavigator from "./DashboardNavigator";
 import SearchNavigator from "./SearchNavigator";
+
 import DrawerNavigator from "./DrawerNavigator";
+
+import GoalModal from "../modals/GoalModal";
+import AddGoal from "../AddGoal/index";
+
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabNavigator = ({ navigation, route }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => setIsOpen(false);
+
   return (
     <Navigator initialRouteName="Home">
       <Screen
@@ -32,9 +40,10 @@ const BottomTabNavigator = ({ navigation, route }) => {
       />
       <Screen
         name="AddGoal"
-        component={AddGoalNavigator}
+        component={GoalModal}
         options={{
-          onPress: () => navigation.navigate("AddGoal"),
+          mode: "modal",
+          onPress: () => setIsOpen(false),
           tabBarIcon: () => <Icon name="plus" type="SimpleLineIcons" />,
         }}
       />
