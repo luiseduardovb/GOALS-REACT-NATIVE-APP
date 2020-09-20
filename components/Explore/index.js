@@ -6,11 +6,7 @@ import { Body } from "native-base";
 import { StyledView } from "./styles";
 
 const Explore = () => {
-  return (
-    <StyledView>
-      <Text> Explore Screen</Text>
-    </StyledView>
-  );
+  return <StyledView></StyledView>;
 };
 
 export default Explore;

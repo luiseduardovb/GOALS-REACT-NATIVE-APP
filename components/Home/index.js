@@ -24,7 +24,7 @@ const Home = ({ navigation }) => {
           </SignInStyle>
         ) : (
           <SignInStyle onPress={() => navigation.navigate("Signin")}>
-            <Text> Sign in</Text>
+            Sign in
           </SignInStyle>
         )}
       </ButtonStyling>

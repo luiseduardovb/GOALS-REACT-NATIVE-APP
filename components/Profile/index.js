@@ -27,6 +27,7 @@ import {
 } from "./styles";
 import authStore from "../../stores/authStore";
 import Signout from "../authentication/Signout";
+import GoalList from "../GoalList/index";
 
 const Profile = () => {
   const { user } = authStore;
@@ -53,7 +54,7 @@ const Profile = () => {
           </Body>
         </UserInfo>
         <StyledView>
-          <Text>ENTER DATA HERE</Text>
+          <GoalList />
         </StyledView>
       </ScrollView>
     </SafeAreaView>

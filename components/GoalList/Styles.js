@@ -21,6 +21,12 @@ export const StyledImage = styled(Image)`
   height: 200;
   flex: 1;
 `;
+export const StyledImageSearch = styled(Image)`
+  width: 150;
+  height: 200;
+  flex: 1;
+  flex-direction: row;
+`;
 
 export const StyledCard = styled(Card)`
   border-radius: 0;
@@ -28,6 +34,7 @@ export const StyledCard = styled(Card)`
 
 export const StyledContent = styled(Content)`
   border-radius: 25;
+  width: 300;
 `;
 
 export const StyledView = styled.View`

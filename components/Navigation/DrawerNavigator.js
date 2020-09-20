@@ -31,7 +31,10 @@ const DrawerNavigator = ({ navigation, route }) => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            <DrawerItem label="Signout" onPress={submit} />
+            <DrawerItem
+              label={() => <Icon type="FontAwesome" name="sign-out" />}
+              onPress={submit}
+            />
           </DrawerContentScrollView>
         );
       }}
@@ -50,6 +53,7 @@ const DrawerNavigator = ({ navigation, route }) => {
           drawerIcon: () => <Icon name="home" type="Entypo" />,
         }}
       />
+      {/* <Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
     </Navigator>
   );
 };

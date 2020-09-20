@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { Content, List } from "native-base";
 
 //Components
-import GoalItem from "./GoalItem";
-import AddGoal from "../buttons/AddGoal";
+import GoalItem from "./Goaltem";
+// import AddGoal from "../buttons/AddGoal";
 
 //Store
 import goalStore from "../../stores/goalStore";
+import SearchBar from "../Search/SearchBar";
 
-const GoalList = ({ navigation }) => {
+const GoalList = ({ navigation, searchGoal }) => {
+  const [query, setQuery] = useState("");
+
   const goalList = goalStore.goals.map((goal) => (
-    <GoalItem goal={goal} key={goal.id} navigation={navigation} />
+    <GoalItem
+      searchGoal={searchGoal}
+      goal={goal}
+      key={goal.id}
+      navigation={navigation}
+    />
   ));
+  // .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
 
   return (
     <Content>
+      <SearchBar setQuery={setQuery} />
       <List>{goalList}</List>
-      <AddGoal />
+      {/* <AddGoal /> */}
     </Content>
   );
 };

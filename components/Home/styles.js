@@ -14,7 +14,7 @@ export const HomeImageBackground = styled.ImageBackground`
 
 export const SignInStyle = styled.Text`
   color: #eed3d3;
-  font-size: 24;
+  font-size: 20;
   font-weight: bold;
   text-align: center;
 `;

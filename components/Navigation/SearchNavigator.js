@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
-import Search from "../Search";
+import Search from "../Search/index";
 
 const { Navigator, Screen } = createStackNavigator();
 

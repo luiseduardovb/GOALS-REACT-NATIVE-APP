@@ -1,16 +1,31 @@
 import React from "react";
 import { observer } from "mobx-react";
-
-// Components
-
+import { FlatGrid } from "react-native-super-grid";
+import { SectionGrid } from "react-native-super-grid";
+import { CardSection } from "react-native-super-grid";
 // Styles
-import { CardItem, ListItem, Text } from "native-base";
-import { StyledCard, StyledContent, StyledImage } from "./styles";
+import {
+  CardItem,
+  ListItem,
+  Text,
+  Left,
+  Right,
+  View,
+  Image,
+  Container,
+} from "native-base";
+import {
+  StyledCard,
+  StyledContent,
+  StyledImage,
+  StyledImageSearch,
+} from "./styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const GoalItem = ({ navigation, goal }) => {
+const GoalItem = ({ navigation, goal, searchGoal }) => {
   return (
     <>
-      <ListItem>
+      {!searchGoal ? (
         <StyledContent>
           <StyledCard>
             <CardItem cardBody>
@@ -30,7 +45,9 @@ const GoalItem = ({ navigation, goal }) => {
             </CardItem>
           </StyledCard>
         </StyledContent>
-      </ListItem>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
