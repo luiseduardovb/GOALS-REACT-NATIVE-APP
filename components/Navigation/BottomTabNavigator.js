@@ -13,7 +13,6 @@ import DrawerNavigator from "./DrawerNavigator";
 import GoalModal from "../modals/GoalModal";
 import AddGoal from "../AddGoal/index";
 
-
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabNavigator = ({ navigation, route }) => {
@@ -40,7 +39,7 @@ const BottomTabNavigator = ({ navigation, route }) => {
       />
       <Screen
         name="AddGoal"
-        component={GoalModal}
+        component={AddGoal}
         options={{
           mode: "modal",
           onPress: () => setIsOpen(false),
