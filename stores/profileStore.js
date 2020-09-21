@@ -7,11 +7,11 @@ class ProfileStore {
 
   fetchProfiles = async () => {
     try {
-      const response = await instance.get("/profiles");
+      const response = await instance.get("/profile");
       this.profiles = response.data;
       this.loading = false;
     } catch (error) {
-      console.log("ProfileStore -> fetchUser -> error", error);
+      console.log("error", error);
     }
   };
 }

@@ -7,7 +7,7 @@ import GoalModal from "../modals/GoalModal";
 //Styles
 import { UpdateButtonStyled } from "./styles";
 
-const UpdateButton = ({ profile }) => {
+const UpdateButton = ({ goal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -15,9 +15,9 @@ const UpdateButton = ({ profile }) => {
   return (
     <>
       <UpdateButtonStyled onPress={() => setIsOpen(true)}>
-        Update Profile
+        Edit
       </UpdateButtonStyled>
-      <GoalModal isOpen={isOpen} closeModal={closeModal} />
+      <GoalModal isOpen={isOpen} closeModal={closeModal} oldGoal={goal} />
     </>
   );
 };
