@@ -54,6 +54,8 @@ const Profile = () => {
           </Body>
         </UserInfo>
         <StyledView>
+          <Text>ENTER DATA HERE</Text>
+
           <GoalList />
         </StyledView>
       </ScrollView>
