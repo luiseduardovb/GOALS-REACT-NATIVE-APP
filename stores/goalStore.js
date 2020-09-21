@@ -14,6 +14,7 @@ class GoalStore {
       console.log("error", error);
     }
   };
+
   createGoal = async (newGoal) => {
     try {
       const formData = new FormData();
@@ -22,6 +23,27 @@ class GoalStore {
       this.goals.push(res.data);
     } catch (error) {
       console.log("error", error);
+    }
+  };
+
+  updateGoal = async (updatedOne) => {
+    try {
+      const formData = new FormData();
+      for (const key in updatedOne) formData.append(key, updatedOne[key]);
+      await instance.put(`/goals/${updatedOne.id}`, formData);
+      const goal = this.goals.find((goal) => goal.id === updatedOne.id);
+      for (const key in updatedOne) goal[key] = updatedOne[key];
+    } catch (error) {
+      console.log("error:", error);
+    }
+  };
+
+  deleteGoal = async (GoalId) => {
+    try {
+      await instance.delete(`/goals/${GoalId}`);
+      this.goals = this.goals.filter((goal) => goal.id !== GoalId);
+    } catch (error) {
+      console.log("error:", error);
     }
   };
 }
