@@ -9,7 +9,6 @@ class GoalStore {
     try {
       const response = await instance.get("/goals");
       this.goals = response.data;
-      console.log("GoalStore -> fetchGoals -> this.goals", this.goals);
       this.loading = false;
     } catch (error) {
       console.log("error", error);
@@ -28,21 +27,13 @@ class GoalStore {
   };
 
   updateGoal = async (updatedGoal) => {
+    console.log("GoalStore -> updateGoal -> updatedGoal", updatedGoal);
     try {
       const formData = new FormData();
       for (const key in updatedGoal) formData.append(key, updatedGoal[key]);
       await instance.put(`/goals/${updatedGoal.id}`, formData);
       const goal = this.goals.find((goal) => goal.id === updatedGoal.id);
       for (const key in updatedGoal) goal[key] = updatedGoal[key];
-      // =======
-      //   updateGoal = async (updatedOne) => {
-      //     try {
-      //       const formData = new FormData();
-      //       for (const key in updatedOne) formData.append(key, updatedOne[key]);
-      //       await instance.put(`/goals/${updatedOne.id}`, formData);
-      //       const goal = this.goals.find((goal) => goal.id === updatedOne.id);
-      //       for (const key in updatedOne) goal[key] = updatedOne[key];
-      // >>>>>>> Stashed changes
     } catch (error) {
       console.log("error:", error);
     }

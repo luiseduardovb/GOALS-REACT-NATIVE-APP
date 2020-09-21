@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
-import AddGoal from "../AddGoal";
 
 //Components
 import GoalModal from "../modals/GoalModal";
