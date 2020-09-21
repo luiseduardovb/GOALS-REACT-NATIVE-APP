@@ -1,26 +1,18 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { FlatGrid } from "react-native-super-grid";
-import { SectionGrid } from "react-native-super-grid";
-import { CardSection } from "react-native-super-grid";
+
 // Styles
-import {
-  CardItem,
-  ListItem,
-  Text,
-  Left,
-  Right,
-  View,
-  Image,
-  Container,
-} from "native-base";
+import { CardItem, Text, Left, Right } from "native-base";
 import {
   StyledCard,
   StyledContent,
   StyledImage,
-  StyledImageSearch,
-} from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
+  DeleteGoal,
+  ButtonWrapper,
+} from "./Styles";
+
+//Store
+import goalStore from "../../stores/goalStore";
 
 const GoalItem = ({ navigation, goal, searchGoal }) => {
   return (
@@ -43,6 +35,13 @@ const GoalItem = ({ navigation, goal, searchGoal }) => {
                 <Text>{goal.quantifiableUnits}</Text>
               </Right>
             </CardItem>
+            <ButtonWrapper>
+              <DeleteGoal
+                type="EvilIcons"
+                name="trash"
+                onPress={() => goalStore.deleteGoal(goal.id)}
+              />
+            </ButtonWrapper>
           </StyledCard>
         </StyledContent>
       ) : (
