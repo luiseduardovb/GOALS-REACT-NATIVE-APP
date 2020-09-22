@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // unused import
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { G, Circle } from "react-native-svg";
+import { G, Circle } from "react-native-svg"; // unused import
 
 //Components
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
-
-//Store
 
 //Styles
 import { LeaderBoard, PersonalProgress, Popularity } from "./styles";

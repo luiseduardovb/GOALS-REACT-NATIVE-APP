@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 //Components
 import Profile from "../Profile";
 import GoalDetail from "../GoalDetail";
-import BottomTabNavigator from "../Navigation/BottomTabNavigator";
+import BottomTabNavigator from "../Navigation/BottomTabNavigator"; // unused import
 import { Icon } from "native-base";
 
 

@@ -27,7 +27,7 @@ class GoalStore {
   };
 
   updateGoal = async (updatedGoal) => {
-    console.log("GoalStore -> updateGoal -> updatedGoal", updatedGoal);
+    console.log("GoalStore -> updateGoal -> updatedGoal", updatedGoal); // remove console logs before pushing
     try {
       const formData = new FormData();
       for (const key in updatedGoal) formData.append(key, updatedGoal[key]);

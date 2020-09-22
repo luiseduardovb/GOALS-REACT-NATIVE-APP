@@ -6,6 +6,12 @@ import Svg, { G, Circle } from "react-native-svg";
 import { StyledView } from "./styles";
 import { Animated, Text } from "react-native";
 
+/**
+ * Maybe, once the features are done and they work,
+ * find a way to combine this component with PopularityGraph
+ * and reuse them.
+ */
+
 const ProgressCircle = ({ route }) => {
   const { goal } = route.params;
 

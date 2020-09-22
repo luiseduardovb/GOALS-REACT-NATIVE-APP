@@ -3,25 +3,25 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "native-base";
 
 //Components
-// import AddGoalNavigator from "./AddGoalNavigator";
+// import AddGoalNavigator from "./AddGoalNavigator"; // unused import
 import ExploreNavigator from "./ExploreNavigator";
 import DashboardNavigator from "./DashboardNavigator";
 import SearchNavigator from "./SearchNavigator";
 
-import DrawerNavigator from "./DrawerNavigator";
+import DrawerNavigator from "./DrawerNavigator"; // unused import
 
-import GoalModal from "../modals/GoalModal";
-import AddGoal from "../AddGoal/index";
-import ProgressCircle from "../ProgressCircle";
+import GoalModal from "../modals/GoalModal"; // unused import
+import AddGoal from "../AddGoal/index"; // unused import
+import ProgressCircle from "../ProgressCircle"; // unused import
 
-// import AddGoal from "../AddGoal/index";
+// import AddGoal from "../AddGoal/index"; // unused import
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabNavigator = ({ navigation, route }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const closeModal = () => setIsOpen(false);
+  const closeModal = () => setIsOpen(false); // unused method
 
   return (
     <Navigator initialRouteName="Home">

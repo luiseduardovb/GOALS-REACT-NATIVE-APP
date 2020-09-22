@@ -7,12 +7,10 @@ import GoalItem from "./Goaltem";
 
 //Store
 import goalStore from "../../stores/goalStore";
-import SearchBar from "../Search/SearchBar";
+import SearchBar from "../Search/SearchBar"; // component not store, move it up
 
 const GoalList = ({ navigation, myGoal }) => {
   const [query, setQuery] = useState("");
-
-
   const goalList = goalStore.goals
     .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
@@ -23,7 +21,6 @@ const GoalList = ({ navigation, myGoal }) => {
         navigation={navigation}
       />
     ));
-
 
   return (
     <>
