@@ -20,7 +20,27 @@ const BottomTabNavigator = ({ navigation, route }) => {
   const closeModal = () => setIsOpen(false);
 
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator
+      initialRouteName="Home"
+      tabBarOptions={{
+        inactiveTintColor: "#c89f9c",
+        activeTintColor: "#4a4e69",
+      }}
+    >
+      <Screen
+        name="Menu"
+        component={DashboardNavigator}
+        options={{
+          tabBarIcon: () => (
+            <Icon
+              onPress={() => navigation.openDrawer()}
+              type="Entypo"
+              name="menu"
+            />
+          ),
+          tabBarLabel: () => false,
+        }}
+      />
       <Screen
         name="Dashboard"
         component={DashboardNavigator}
@@ -37,15 +57,6 @@ const BottomTabNavigator = ({ navigation, route }) => {
           tabBarIcon: () => <Icon name="world" type="Fontisto" />,
         }}
       />
-      {/* <Screen
-        name="AddGoal"
-        component={AddGoal}
-        options={{
-          mode: "modal",
-          onPress: () => setIsOpen(false),
-          tabBarIcon: () => <Icon name="plus" type="SimpleLineIcons" />,
-        }}
-      /> */}
       <Screen
         name="Search"
         component={SearchNavigator}
