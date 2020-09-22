@@ -7,7 +7,7 @@ import { observer } from "mobx-react";
 import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
-import BottomTabNavigator from "./BottomTabNavigator";
+import BottomTabNavigator from "./BottomTabNavigator"; // unused import
 import DrawerNavigator from "./DrawerNavigator";
 
 const { Navigator, Screen } = createStackNavigator();

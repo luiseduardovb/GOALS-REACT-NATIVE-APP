@@ -23,10 +23,14 @@ const PopularityGraph = ({ route }) => {
   const circleRef = React.useRef();
   const halfCircle = radius + strokeWidth;
   const circleCircumference = 2 * Math.PI * radius;
+  // maxPerc isn't a better name than maxPercentage. It's like 6 extra characters, come on -.-
   const maxPerc = (100 * percentage) / max;
   const strokeDashoffset =
     circleCircumference - (circleCircumference * maxPerc) / 100;
 
+  // if the code below is difficult to understand, or if you think you might forget how it works later,
+  // then it's a good idea to add comments to explain how it works, so that in the future if you come 
+  // back to it, you'll quickly know how it works without re-learning it from the docs.
   return (
     <StyledView>
       <Svg

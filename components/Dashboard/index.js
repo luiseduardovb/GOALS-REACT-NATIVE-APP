@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
-import { Body } from "native-base";
+import { Body } from "native-base"; // unused import
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View } from "react-native"; // unused import
 import AddGoal from "../Buttons/AddGoal";
 import GoalList from "../GoalList";
 //Styles

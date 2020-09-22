@@ -35,6 +35,7 @@ class AuthStore {
     await AsyncStorage.removeItem("myToken");
     this.user = null;
   };
+
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
     console.log("checkForToken -> token", token);
@@ -42,7 +43,7 @@ class AuthStore {
       const currentTime = Date.now() / 1000;
       const user = decode(token);
       if (user.exp >= currentTime) {
-        this.setUser(token);
+        this.setUser(token); // await
       } else {
         this.signout();
       }

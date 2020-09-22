@@ -8,11 +8,12 @@ import {
   StyledContent,
   StyledImage,
 
-  StyledImageSearch,
+  StyledImageSearch, // unused import
 } from "./Styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler"; // unused import
 
-  DeleteGoal,
+// obvious bug
+DeleteGoal,
   ButtonWrapper,
 } from "./Styles";
 
@@ -22,6 +23,7 @@ import UpdateGoal from "../Buttons/UpdateGoal";
 
 
 const GoalItem = ({ navigation, goal, myGoal }) => {
+  // simplify the code below
   return (
     <>
 
@@ -52,8 +54,8 @@ const GoalItem = ({ navigation, goal, myGoal }) => {
           </StyledCard>
         </StyledContent>
       ) : (
-        <></>
-      )}
+          <></>
+        )}
 
       <StyledContent>
         <StyledCard>

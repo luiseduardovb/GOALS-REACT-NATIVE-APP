@@ -6,12 +6,12 @@ import { ScrollView } from "react-native-gesture-handler";
 import {
   Text,
   Spinner,
-  Right,
+  Right, // unused import
   Body,
-  Left,
-  Image,
-  Thumbnail,
-  View,
+  Left, // unused import
+  Image, // unused import
+  Thumbnail, // unused import
+  View, // unused import
 } from "native-base";
 
 //Styles
@@ -22,18 +22,19 @@ import {
   Name,
   ProfileImage,
   StyledView,
-  UserName,
-  BackgroundImage,
+  UserName, // unused import
+  BackgroundImage, // unused import
 } from "./styles";
 import authStore from "../../stores/authStore";
-import Signout from "../authentication/Signout";
+import Signout from "../authentication/Signout"; // unused import
 import GoalList from "../GoalList/index";
-import goalStore from "../../stores/goalStore";
-import profileStore from "../../stores/goalStore";
+import goalStore from "../../stores/goalStore"; // unused import
+import profileStore from "../../stores/goalStore"; // unused import
 
 const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
+  // this code below doesn't work. It needs a parent element.
   return (
 
     <SafeAreaView>

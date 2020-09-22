@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
-import RootNavigator from "../../components/Navigation";
+import RootNavigator from "../../components/Navigation"; // unused import
 
 //styles
 import {
@@ -15,6 +15,8 @@ import { Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import authStore from "../../stores/authStore";
 
+// organize imports
+
 const Signin = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
@@ -23,6 +25,7 @@ const Signin = ({ navigation }) => {
   });
   const [appearPass, setAppearPass] = useState(false);
 
+  // camelCase
   const PasswordAppearance = () => {
     setAppearPass(!appearPass);
   };

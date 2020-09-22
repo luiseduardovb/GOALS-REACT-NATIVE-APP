@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { SearchBarStyled } from "./styles";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput } from "react-native-gesture-handler"; // unused import
 
 const SearchBar = ({ setQuery }) => {
   return (

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react"; // unused import
+import { Text, View } from "react-native"; // unused import
 
 //Styles
 import { StyledView } from "./styles";

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // unused import
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
-
-//Components
-import GoalModal from "../modals/GoalModal";
+import GoalModal from "../modals/GoalModal"; // unused import
 
 const { Navigator, Screen } = createStackNavigator();
 

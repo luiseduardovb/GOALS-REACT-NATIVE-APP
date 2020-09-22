@@ -11,8 +11,8 @@ import { Icon } from "native-base";
 //components
 import ProfileNavigator from "./ProfileNavigator";
 import BottomTabNavigator from "./BottomTabNavigator";
-import Signout from "../authentication/Signout";
-import Home from "../Home";
+import Signout from "../authentication/Signout"; // unused import
+import Home from "../Home"; // unused import
 
 import authStore from "../../stores/authStore";
 
