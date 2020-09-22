@@ -4,10 +4,12 @@ import { Content, List } from "native-base";
 
 //Components
 import GoalItem from "./Goaltem";
+import SearchBar from "../Search/SearchBar";
 
 //Store
 import goalStore from "../../stores/goalStore";
-import SearchBar from "../Search/SearchBar";
+import { SafeAreaView } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const GoalList = ({ navigation, myGoal }) => {
   const [query, setQuery] = useState("");
@@ -17,20 +19,23 @@ const GoalList = ({ navigation, myGoal }) => {
     .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
       <GoalItem
-        searchGoal={searchGoal}
         goal={goal}
         key={goal.id}
         navigation={navigation}
+        myGoal={myGoal}
       />
     ));
+    
 
 
   return (
     <>
-      <SearchBar setQuery={setQuery} />
-      <Content>
-        <List>{goalList}</List>
-      </Content>
+      <SafeAreaView>
+        <ScrollView>
+          <SearchBar setQuery={setQuery} />
+          <List>{goalList}</List>
+        </ScrollView>
+      </SafeAreaView>
     </>
   );
 };

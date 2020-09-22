@@ -6,7 +6,7 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 
-import { Icon } from "native-base";
+import { Icon, Text } from "native-base";
 
 //components
 import ProfileNavigator from "./ProfileNavigator";
@@ -32,7 +32,8 @@ const DrawerNavigator = ({ navigation, route }) => {
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
             <DrawerItem
-              label={() => <Icon type="FontAwesome" name="sign-out" />}
+              label={() => <Text style={{ fontSize: 14 }}>Sign Out</Text>}
+              icon={() => <Icon type="FontAwesome" name="sign-out" />}
               onPress={submit}
             />
           </DrawerContentScrollView>

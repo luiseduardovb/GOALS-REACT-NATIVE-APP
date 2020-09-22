@@ -34,6 +34,7 @@ import profileStore from "../../stores/goalStore";
 const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
+
   return (
 
     <SafeAreaView>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
@@ -10,14 +10,20 @@ import { Icon } from "native-base";
 
 const { Navigator, Screen } = createStackNavigator();
 
-const ProfileNavigator = () => {
+const ProfileNavigator = ({ navigation }) => {
   return (
     <Navigator>
       <Screen
         name="Profile"
         component={Profile}
         options={{
-          headerLeft: () => <Icon type="Entypo" name="menu" />,
+          headerLeft: () => (
+            <Icon
+              onPress={() => navigation.openDrawer()}
+              type="Entypo"
+              name="menu"
+            />
+          ),
         }}
       />
       <Screen

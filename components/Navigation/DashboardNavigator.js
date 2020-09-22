@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
 import Dashboard from "../Dashboard";
+import AddGoal from "../Buttons/AddGoal";
+import SearchBar from "../Search";
 
 const { Navigator, Screen } = createStackNavigator();
 
