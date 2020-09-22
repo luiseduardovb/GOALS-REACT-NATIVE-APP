@@ -13,15 +13,16 @@ import SearchBar from "../Search/SearchBar";
 const GoalList = ({ navigation, searchGoal }) => {
   const [query, setQuery] = useState("");
 
-  const goalList = goalStore.goals.map((goal) => (
-    <GoalItem
-      searchGoal={searchGoal}
-      goal={goal}
-      key={goal.id}
-      navigation={navigation}
-    />
-  ));
-  // .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
+  const goalList = goalStore.goals
+    .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
+    .map((goal) => (
+      <GoalItem
+        searchGoal={searchGoal}
+        goal={goal}
+        key={goal.id}
+        navigation={navigation}
+      />
+    ));
 
   return (
     <Content>

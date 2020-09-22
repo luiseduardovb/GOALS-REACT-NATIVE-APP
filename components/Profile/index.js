@@ -29,7 +29,7 @@ import authStore from "../../stores/authStore";
 import Signout from "../authentication/Signout";
 import GoalList from "../GoalList/index";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
   return (
@@ -54,7 +54,7 @@ const Profile = () => {
           </Body>
         </UserInfo>
         <StyledView>
-          <GoalList />
+          <GoalList navigation={navigation} />
         </StyledView>
       </ScrollView>
     </SafeAreaView>

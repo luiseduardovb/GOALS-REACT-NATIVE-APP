@@ -19,7 +19,7 @@ import {
   StyledContent,
   StyledImage,
   StyledImageSearch,
-} from "./styles";
+} from "./Styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const GoalItem = ({ navigation, goal, searchGoal }) => {
@@ -37,7 +37,13 @@ const GoalItem = ({ navigation, goal, searchGoal }) => {
             </CardItem>
             <CardItem>
               <Left>
-                <Text>{goal.name}</Text>
+                <Text
+                  onPress={() => {
+                    navigation.navigate("Goal Detail", { goal: goal });
+                  }}
+                >
+                  {goal.name}
+                </Text>
               </Left>
               <Right>
                 <Text>{goal.quantifiableUnits}</Text>

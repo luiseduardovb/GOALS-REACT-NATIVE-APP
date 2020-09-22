@@ -12,6 +12,7 @@ import DrawerNavigator from "./DrawerNavigator";
 
 import GoalModal from "../modals/GoalModal";
 import AddGoal from "../AddGoal/index";
+import ProgressCircle from "../ProgressCircle";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -54,6 +55,14 @@ const BottomTabNavigator = ({ navigation, route }) => {
           tabBarIcon: () => <Icon name="search" type="Ionicons" />,
         }}
       />
+      {/* <Screen
+        name="Progress Circle"
+        component={ProgressCircle}
+        options={{
+          onPress: () => navigation.navigate("Progress Circle"),
+          tabBarIcon: () => <Icon name="search" type="Ionicons" />,
+        }}
+      /> */}
     </Navigator>
   );
 };
