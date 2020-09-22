@@ -14,6 +14,7 @@ import { ScrollView } from "react-native-gesture-handler";
 const GoalList = ({ navigation, myGoal }) => {
   const [query, setQuery] = useState("");
 
+
   const goalList = goalStore.goals
     .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
@@ -24,12 +25,14 @@ const GoalList = ({ navigation, myGoal }) => {
         myGoal={myGoal}
       />
     ));
+    
+
 
   return (
     <>
       <SafeAreaView>
         <ScrollView>
-          {/* <SearchBar setQuery={setQuery} /> */}
+          <SearchBar setQuery={setQuery} />
           <List>{goalList}</List>
         </ScrollView>
       </SafeAreaView>

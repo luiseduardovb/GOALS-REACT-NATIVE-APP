@@ -31,11 +31,38 @@ import GoalList from "../GoalList/index";
 import goalStore from "../../stores/goalStore";
 import profileStore from "../../stores/goalStore";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
 
   return (
+
+    <SafeAreaView>
+      <ScrollView>
+        <UserInfo>
+          {/* <Right style={{ marginLeft: 320 }}>
+            <Signout />
+          </Right> */}
+          <Body>
+            <ProfileImage
+              source={{
+                uri:
+                  "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
+              }}
+            />
+            <Name>
+              <FirstName>{user.firstName}</FirstName>
+              <LastName> {user.lastName}</LastName>
+            </Name>
+            <Text>@{user.username}</Text>
+          </Body>
+        </UserInfo>
+        <StyledView>
+          <GoalList navigation={navigation} />
+        </StyledView>
+      </ScrollView>
+    </SafeAreaView>
+
     <>
       <SafeAreaView>
         <ScrollView>
