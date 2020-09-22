@@ -9,12 +9,12 @@ class GoalStore {
     try {
       const response = await instance.get("/goals");
       this.goals = response.data;
-      console.log("GoalStore -> fetchGoals -> this.goals", this.goals);
       this.loading = false;
     } catch (error) {
       console.log("error", error);
     }
   };
+
   createGoal = async (newGoal) => {
     try {
       const formData = new FormData();
@@ -27,6 +27,7 @@ class GoalStore {
   };
 
   updateGoal = async (updatedGoal) => {
+    console.log("GoalStore -> updateGoal -> updatedGoal", updatedGoal);
     try {
       const formData = new FormData();
       for (const key in updatedGoal) formData.append(key, updatedGoal[key]);

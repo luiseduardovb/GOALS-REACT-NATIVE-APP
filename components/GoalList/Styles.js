@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
-
+import { Icon } from "native-base";
 import { Image } from "react-native";
-import { Card, Content } from "native-base";
+import { Card, Content, View } from "native-base";
 
 export const AddButton = styled.TouchableOpacity`
   align-self: stretch;
@@ -17,8 +17,22 @@ export const AddButtonText = styled.Text`
   font-size: 18px;
 `;
 
+export const DeleteGoal = styled(Icon)`
+  color: red;
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
+`;
+
+export const ButtonWrapper = styled(View)`
+  margin-top: 33px;
+  display: flex;
+  flex-direction: row;
+`;
+
 export const StyledImage = styled(Image)`
   height: 200;
+  width: 200;
   flex: 1;
 `;
 export const StyledImageSearch = styled(Image)`

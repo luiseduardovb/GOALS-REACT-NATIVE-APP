@@ -3,21 +3,21 @@ import styled from "styled-components/native";
 import { Icon } from "native-base";
 
 export const CloseButtonStyled = styled(Icon)`
-  color: black;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  color: #4a4e69;
+  margin-bottom: 15px;
 `;
 
 export const CreateButton = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
   padding: 20px;
-  background-color: navy;
   margin-top: 30px;
+  border: 1px;
+  border-color: #9d8189;
 `;
 
 export const CreateButtonText = styled.Text`
-  color: #ffffff;
+  color: #1b4965;
   font-weight: bold;
   font-size: 18px;
 `;
@@ -32,14 +32,15 @@ export const ModalView = styled.View`
   background-color: #ffffff;
   border-radius: 10;
   padding: 20px;
-  margin: 50px;
+  margin: 50px 30px 170px;
 `;
 
 export const ModalTitle = styled.Text`
-  color: purple;
+  color: #1b4965;
   font-size: 24px;
   margin-bottom: 20px;
   border-bottom-color: white;
+  text-align: center;
 `;
 
 export const ModalTextInput = styled.TextInput`
@@ -48,6 +49,6 @@ export const ModalTextInput = styled.TextInput`
   height: 40px;
   margin-bottom: 30px;
   color: darkblue;
-  border-bottom-color: navy;
+  border-bottom-color: #3d5a80;
   border-bottom-width: 1px;
 `;

@@ -4,6 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 //Components
 import Profile from "../Profile";
 import GoalDetail from "../GoalDetail";
+import BottomTabNavigator from "../Navigation/BottomTabNavigator";
+import { Icon } from "native-base";
+
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -14,7 +17,7 @@ const ProfileNavigator = () => {
         name="Profile"
         component={Profile}
         options={{
-          headerShown: false,
+          headerLeft: () => <Icon type="Entypo" name="menu" />,
         }}
       />
       <Screen
