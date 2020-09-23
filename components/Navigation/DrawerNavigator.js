@@ -19,6 +19,7 @@ import authStore from "../../stores/authStore";
 const { Navigator, Screen } = createDrawerNavigator();
 
 const DrawerNavigator = ({ navigation, route }) => {
+  const { user } = route.params;
   const submit = async () => {
     await authStore.signout();
     navigation.navigate("Home");
@@ -41,9 +42,11 @@ const DrawerNavigator = ({ navigation, route }) => {
       }}
     >
       <Screen
-        name="Profile"
+        name={user.username}
         component={ProfileNavigator}
         options={{
+          title: user.username,
+
           drawerIcon: () => <Icon name="user-alt" type="FontAwesome5" />,
         }}
       />

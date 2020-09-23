@@ -4,7 +4,7 @@ export const Background = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #11212c;
   padding-right: 60px;
   padding-left: 60px;
   flex: 1;
@@ -25,7 +25,7 @@ export const HomeImageBackground = styled.ImageBackground`
 export const ChangeTo = styled.Text`
   color: white;
   margin-top: 15px;
-  color: red;
+  color: #fca311;
 `;
 
 export const SignInput = styled.TextInput`
@@ -41,26 +41,24 @@ export const SignInput = styled.TextInput`
 export const PressButton = styled.TouchableOpacity`
   align-items: center;
   padding: 15px;
-  background-color: lightgrey;
-  margin-top: 30px;
+  margin-top: 38px;
 `;
 
 export const SignButton = styled.Text`
-  color: #fcfdff;
   font-weight: bold;
   font-size: 18px;
-  color: black;
+  color: #fca311;
 `;
 
 export const SignInStyle = styled.Text`
-  color: #eed3d3;
+  color: #fca311;
   font-size: 24;
   font-weight: bold;
   text-align: center;
 `;
 
 export const Title = styled.Text`
-  color: red;
+  color: #fca311;
   font-size: 24px;
   margin-bottom: 20px;
   border-bottom-color: white;

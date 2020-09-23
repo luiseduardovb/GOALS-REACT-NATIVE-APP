@@ -14,9 +14,11 @@ const UpdateGoal = ({ goal }) => {
 
   return (
     <>
-      <UpdateButtonStyled onPress={() => setIsOpen(true)}>
-        Edit
-      </UpdateButtonStyled>
+      <UpdateButtonStyled
+        onPress={() => setIsOpen(true)}
+        type="MaterialCommunityIcons"
+        name="square-edit-outline"
+      />
       <GoalModal isOpen={isOpen} closeModal={closeModal} oldGoal={goal} />
     </>
   );

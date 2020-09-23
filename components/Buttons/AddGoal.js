@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import GoalModal from "../modals/GoalModal";
 
 //Styles
-import { AddButtonStyled } from "./styles";
+import { AddButtonStyled, AddTextStyled } from "./styles";
 
 const AddButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,12 @@ const AddButton = () => {
 
   return (
     <>
-      <AddButtonStyled onPress={() => setIsOpen(true)}>
-        <AddButtonStyled>Add Your Goal!</AddButtonStyled>
-      </AddButtonStyled>
+      <AddTextStyled>Add Your Goal!</AddTextStyled>
+      <AddButtonStyled
+        onPress={() => setIsOpen(true)}
+        type="Ionicons"
+        name="ios-add-circle"
+      />
       <GoalModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
