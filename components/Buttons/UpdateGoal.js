@@ -7,7 +7,7 @@ import GoalModal from "../modals/GoalModal";
 //Styles
 import { UpdateButtonStyled } from "./styles";
 
-const UpdateButton = ({ goal }) => {
+const UpdateGoal = ({ goal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -22,4 +22,4 @@ const UpdateButton = ({ goal }) => {
   );
 };
 
-export default UpdateButton;
+export default UpdateGoal;

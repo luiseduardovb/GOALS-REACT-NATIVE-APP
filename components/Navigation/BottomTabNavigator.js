@@ -11,11 +11,9 @@ import SearchNavigator from "./SearchNavigator";
 import DrawerNavigator from "./DrawerNavigator";
 
 import GoalModal from "../modals/GoalModal";
-import AddGoal from "../AddGoal/index";
-import ProgressCircle from "../ProgressCircle";
+// import ProgressCircle from "../ProgressCircle";
 
 // import AddGoal from "../AddGoal/index";
-
 
 const { Navigator, Screen } = createBottomTabNavigator();
 

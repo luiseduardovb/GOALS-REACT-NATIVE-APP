@@ -10,9 +10,9 @@ export const UpdateButtonStyled = styled.Text`
   height: 25;
 `;
 export const AddButtonStyled = styled.Text`
-  text-align: right;
-  padding-bottom: 6px;
-  position: absolute;
-  right: 8px;
-  top: 33;
+  border: 1px;
+  border-color: #b5838d;
+  padding: 5px;
+  margin: 6px;
+  border-radius: 7px;
 `;

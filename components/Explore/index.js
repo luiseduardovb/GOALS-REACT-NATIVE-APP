@@ -18,11 +18,7 @@ const Explore = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
 
-  return (
-    <StyledView>
-      <GoalList navigation={navigation} />
-    </StyledView>
-  );
+  return <StyledView></StyledView>;
 };
 
 export default observer(Explore);

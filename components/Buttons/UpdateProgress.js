@@ -7,7 +7,7 @@ import { Icon, Text } from "native-base";
 import { UpdateButtonStyled } from "./styles";
 import ProgressModal from "../modals/ProgressModal";
 
-const UpdateButton = ({ progress }) => {
+const UpdateProgress = ({ progress }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -26,4 +26,4 @@ const UpdateButton = ({ progress }) => {
   );
 };
 
-export default UpdateButton;
+export default UpdateProgress;
