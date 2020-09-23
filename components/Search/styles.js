@@ -6,7 +6,7 @@ export const StyledView = styled.View`
 
 export const SearchBarStyled = styled.TextInput`
   border: 1.5px;
-  border-color: #c9ada7;
+  border-color: #14213d;
   border-radius: 7px;
   padding: 10px;
   width: 230px;

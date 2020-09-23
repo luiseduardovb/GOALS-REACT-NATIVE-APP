@@ -38,7 +38,7 @@ const Signin = ({ navigation }) => {
 
   return (
     <Background>
-      <Title>Sign in</Title>
+      {/* <Title>Sign in</Title> */}
 
       <SignInput
         onChangeText={(username) => setUser({ ...user, username })}
