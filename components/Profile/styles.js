@@ -37,5 +37,7 @@ export const LastName = styled.Text`
 `;
 
 export const StyledView = styled.View`
-  margin: auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 25;
 `;

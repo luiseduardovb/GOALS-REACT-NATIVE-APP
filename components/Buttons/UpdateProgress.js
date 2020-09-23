@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Icon, Text } from "native-base";
 
 //Components
-import GoalModal from "../modals/GoalModal";
 
 //Styles
 import { UpdateButtonStyled } from "./styles";
+import ProgressModal from "../modals/ProgressModal";
 
-const UpdateGoal = ({ goal }) => {
+const UpdateProgress = ({ progress }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -17,9 +17,13 @@ const UpdateGoal = ({ goal }) => {
       <UpdateButtonStyled onPress={() => setIsOpen(true)}>
         Edit
       </UpdateButtonStyled>
-      <GoalModal isOpen={isOpen} closeModal={closeModal} oldGoal={goal} />
+      <ProgressModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        oldProgress={progress}
+      />
     </>
   );
 };
 
-export default UpdateGoal;
+export default UpdateProgress;

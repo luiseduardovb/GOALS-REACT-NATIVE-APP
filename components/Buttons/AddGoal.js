@@ -1,4 +1,4 @@
-import { Icon } from "native-base";
+import { Icon, Text } from "native-base";
 import React, { useState } from "react";
 
 //Components
@@ -15,7 +15,7 @@ const AddButton = () => {
   return (
     <>
       <AddButtonStyled onPress={() => setIsOpen(true)}>
-        <Icon style={{ color: "#c9ada7" }} type="Entypo" name="plus" />
+        <AddButtonStyled>Add Your Goal!</AddButtonStyled>
       </AddButtonStyled>
       <GoalModal isOpen={isOpen} closeModal={closeModal} />
     </>

@@ -16,22 +16,18 @@ const GoalList = ({ navigation, myGoal, goals }) => {
   const [query, setQuery] = useState("");
 
   const goalList = goals
-    // .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
+    .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
       <GoalItem goal={goal} key={goal.id} navigation={navigation} />
     ));
-    
-
 
   return (
     <SafeAreaView>
       <SearchBar setQuery={setQuery} />
-      <AddGoal />
       <ScrollView>
         <List>{goalList}</List>
       </ScrollView>
     </SafeAreaView>
-
   );
 };
 
