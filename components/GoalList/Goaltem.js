@@ -7,6 +7,11 @@ import {
   StyledCard,
   StyledContent,
   StyledImage,
+
+  StyledImageSearch,
+} from "./Styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
   DeleteGoal,
   ButtonWrapper,
 } from "./Styles";
@@ -16,9 +21,41 @@ import goalStore from "../../stores/goalStore";
 import UpdateGoal from "../Buttons/UpdateGoal";
 import progressStore from "../../stores/progressStore";
 
+
 const GoalItem = ({ navigation, goal, myGoal }) => {
   return (
     <>
+
+      {!searchGoal ? (
+        <StyledContent>
+          <StyledCard>
+            <CardItem cardBody>
+              <StyledImage
+                source={{
+                  uri: "https://wallpapercave.com/wp/wp1984340.jpg",
+                }}
+              />
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Text
+                  onPress={() => {
+                    navigation.navigate("Goal Detail", { goal: goal });
+                  }}
+                >
+                  {goal.name}
+                </Text>
+              </Left>
+              <Right>
+                <Text>{goal.quantifiableUnits}</Text>
+              </Right>
+            </CardItem>
+          </StyledCard>
+        </StyledContent>
+      ) : (
+        <></>
+      )}
+
       <StyledContent>
         <StyledCard>
           <CardItem cardBody>
@@ -46,6 +83,7 @@ const GoalItem = ({ navigation, goal, myGoal }) => {
           </ButtonWrapper>
         </StyledCard>
       </StyledContent>
+
     </>
   );
 };

@@ -20,6 +20,8 @@ const GoalList = ({ navigation, myGoal, goals }) => {
     .map((goal) => (
       <GoalItem goal={goal} key={goal.id} navigation={navigation} />
     ));
+    
+
 
   return (
     <SafeAreaView>
@@ -29,6 +31,7 @@ const GoalList = ({ navigation, myGoal, goals }) => {
         <List>{goalList}</List>
       </ScrollView>
     </SafeAreaView>
+
   );
 };
 
