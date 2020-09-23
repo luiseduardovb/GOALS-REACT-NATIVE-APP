@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import AddGoal from "../Buttons/AddGoal";
 //Native Base
 import {
   Text,
@@ -30,6 +31,7 @@ import Signout from "../authentication/Signout";
 import GoalList from "../GoalList/index";
 import goalStore from "../../stores/goalStore";
 import profileStore from "../../stores/goalStore";
+import progressStore from "../../stores/progressStore";
 
 const Profile = ({ navigation }) => {
   const { user } = authStore;
@@ -81,7 +83,6 @@ const Profile = ({ navigation }) => {
               <Text>@{user.username}</Text>
             </Body>
           </UserInfo>
-          <GoalList myGoal />
         </ScrollView>
       </SafeAreaView>
     </>

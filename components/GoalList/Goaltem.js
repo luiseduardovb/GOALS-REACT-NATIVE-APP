@@ -19,6 +19,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 //Store
 import goalStore from "../../stores/goalStore";
 import UpdateGoal from "../Buttons/UpdateGoal";
+import progressStore from "../../stores/progressStore";
 
 
 const GoalItem = ({ navigation, goal, myGoal }) => {
