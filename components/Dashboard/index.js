@@ -1,11 +1,14 @@
 import { observer } from "mobx-react";
-import { Body } from "native-base";
+import { Body, Spinner } from "native-base";
 import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
 import AddGoal from "../Buttons/AddGoal";
 import { ScrollView } from "react-native-gesture-handler";
 import SearchBar from "../Search";
 import GoalList from "../GoalList";
+import authStore from "../../stores/authStore";
+import progressStore from "../../stores/progressStore";
+
 //Styles
 import {
   StyledView,
@@ -19,11 +22,14 @@ import {
 } from "./styles";
 
 const Dashboard = ({ navigation }) => {
+  const { user } = authStore;
+  if (!user) return <Spinner />;
+  const goals = progressStore.progresses.filter(
+    (progress) => progress.profileId === user.id
+  );
   return (
     <>
-      <StyledView>
-        <GoalList navigation={navigation} />
-      </StyledView>
+      <GoalList goals={goals} navigation={navigation} />
     </>
   );
 };

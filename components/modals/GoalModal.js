@@ -30,7 +30,20 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
   );
 
   const handleSubmit = () => {
-    goalStore[oldGoal ? "updateGoal" : "createGoal"](goal);
+    if (oldGoal) {
+      goalStore.updateGoal(goal);
+    } else {
+      goalStore.createGoal(goal);
+      setGoal({
+        name: "",
+        quantifiableUnits: "",
+        unitOfMeasure: "",
+        target: 0,
+        category: "",
+        popularity: 0,
+      });
+    }
+
     closeModal();
   };
 

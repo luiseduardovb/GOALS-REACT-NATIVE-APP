@@ -5,9 +5,12 @@ export const StyledView = styled.View`
 `;
 
 export const SearchBarStyled = styled.TextInput`
-  margin: 10% auto;
-  border-bottom-color: #c9ada7;
-  border-bottom-width: 1px;
+  border: 1.5px;
+  border-color: #c9ada7;
+  border-radius: 7px;
   padding: 10px;
-  width: 60%;
+  width: 230px;
+  margin-bottom: 20px;
+  top: 10;
+  left: 10;
 `;

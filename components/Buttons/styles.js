@@ -10,11 +10,9 @@ export const UpdateButtonStyled = styled.Text`
   height: 25;
 `;
 export const AddButtonStyled = styled.Text`
-  width: 120;
-  height: 30;
-  border: 1px;
-  border-color: #272640;
-  text-align: center;
-  padding: 3px;
-  color: #6d597a;
+  text-align: right;
+  padding-bottom: 6px;
+  position: absolute;
+  right: 8px;
+  top: 58;
 `;
