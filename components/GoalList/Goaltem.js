@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 // Styles
-import { CardItem, Text, Left, Right } from "native-base";
+import { CardItem, Text, Left, Right, Icon } from "native-base";
 import {
   StyledCard,
   StyledContent,

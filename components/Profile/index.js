@@ -36,6 +36,7 @@ import progressStore from "../../stores/progressStore";
 const Profile = () => {
   const { user } = authStore;
   if (!user) return <Spinner />;
+  const goals = goalStore.goals.filter((goal) => goal.ownerId === user.id);
 
   return (
     <>
@@ -56,6 +57,7 @@ const Profile = () => {
               <Text>@{user.username}</Text>
             </Body>
           </UserInfo>
+          <GoalList goals={goals} />
         </ScrollView>
       </SafeAreaView>
     </>

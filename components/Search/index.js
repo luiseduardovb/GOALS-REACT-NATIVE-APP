@@ -6,11 +6,7 @@ import AddGoal from "../Buttons/AddGoal";
 import { StyledView } from "./styles";
 
 const Search = () => {
-  return (
-    <StyledView>
-      <AddGoal />
-    </StyledView>
-  );
+  return <StyledView></StyledView>;
 };
 
 export default Search;

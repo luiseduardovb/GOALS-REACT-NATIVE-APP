@@ -20,18 +20,10 @@ import {
   UserName,
   BackgroundImage,
 } from "./styles";
+import goalStore from "../../stores/goalStore";
 
 const Dashboard = ({ navigation }) => {
-  const { user } = authStore;
-  if (!user) return <Spinner />;
-  const goals = progressStore.progresses.filter(
-    (progress) => progress.profileId === user.id
-  );
-  return (
-    <>
-      <GoalList goals={goals} navigation={navigation} />
-    </>
-  );
+  return <StyledView></StyledView>;
 };
 
 export default observer(Dashboard);

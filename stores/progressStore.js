@@ -17,6 +17,17 @@ class ProgressStores {
     }
   };
 
+  updateProgress = async (updatedProgress) => {
+    try {
+      await instance.put(`/progress/${updatedProgress.id}`, updatedProgress);
+      const progress = this.progresses.find(
+        (progress) => progress.id === updatedProgress.id
+      );
+      for (const key in updatedProgress) progress[key] = updatedProgress[key];
+    } catch (error) {
+      console.log("ProgressStores -> updateProgress -> error", error);
+    }
+  };
   // fetchFollowedGoals = async (userId) => {
   //   try {
   //     const response = await instance.get("/progress");

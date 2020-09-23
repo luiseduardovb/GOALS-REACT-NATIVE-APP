@@ -5,7 +5,7 @@ export const StyledView = styled.View`
   margin: auto;
 `;
 export const UpdateButtonStyled = styled.Text`
-  margin-left: 210;
+  margin-left: 400;
   width: 150;
   height: 25;
 `;
@@ -14,5 +14,5 @@ export const AddButtonStyled = styled.Text`
   padding-bottom: 6px;
   position: absolute;
   right: 8px;
-  top: 58;
+  top: 33;
 `;
