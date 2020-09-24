@@ -27,10 +27,10 @@ const GoalDetail = ({ route }) => {
           <Text>Progress</Text>
           <ProgressCircle route={route} />
         </PersonalProgress>
-        <Popularity>
+        {/* <Popularity>
           <Text>Popularity</Text>
           <PopularityGraph route={route} />
-        </Popularity>
+        </Popularity> */}
       </ScrollView>
     </SafeAreaView>
   );
