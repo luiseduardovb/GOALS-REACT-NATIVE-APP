@@ -10,7 +10,7 @@ import AddGoal from "../Buttons/AddGoal";
 //Store
 import goalStore from "../../stores/goalStore";
 import { SafeAreaView } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, FlatList } from "react-native-gesture-handler";
 
 const GoalList = ({ navigation, myGoal, goals }) => {
   const [query, setQuery] = useState("");
