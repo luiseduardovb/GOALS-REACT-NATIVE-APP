@@ -77,7 +77,7 @@ const PopularityGraph = ({ route }) => {
             strokeDashoffset={strokeDashoffset * 0.6}
             strokeLinecap="round"
           />
-          <Circle
+          {/* <Circle
             cx="50%"
             cy="50%"
             stroke={color3}
@@ -118,7 +118,7 @@ const PopularityGraph = ({ route }) => {
             strokeDasharray={circleCircumference}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
-          />
+          /> */}
         </G>
       </Svg>
 

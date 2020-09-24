@@ -33,7 +33,7 @@ import goalStore from "../../stores/goalStore";
 import profileStore from "../../stores/goalStore";
 import progressStore from "../../stores/progressStore";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
   const goals = goalStore.goals.filter((goal) => goal.ownerId === user.id);
@@ -55,14 +55,14 @@ const Profile = () => {
                 <LastName> {user.lastName}</LastName>
               </Name>
               <Text>@{user.username}</Text>
-              <AddGoal />
             </Body>
           </UserInfo>
           <StyledView>
-            <GoalList goals={goals} />
+            <GoalList goals={goals} navigation={navigation} />
           </StyledView>
         </ScrollView>
       </SafeAreaView>
+      <AddGoal />
     </>
   );
 };
