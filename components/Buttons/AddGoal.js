@@ -1,11 +1,16 @@
-import { Icon, Text } from "native-base";
 import React, { useState } from "react";
+
+// Stores
+import authStore from "../../stores/authStore";
+import goalStore from "../../stores/goalStore";
 
 //Components
 import GoalModal from "../modals/GoalModal";
 
 //Styles
-import { AddButtonStyled, StyledTouchableOpacity } from "./styles";
+import { Icon, Text } from "native-base";
+import { AddButtonStyled, AddTextStyled,StyledTouchableOpacity } from "./styles";
+
 
 const AddButton = () => {
   const [isOpen, setIsOpen] = useState(false);

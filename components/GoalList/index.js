@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { Content, List } from "native-base";
+import { SafeAreaView } from "react-native";
+import { ScrollView, FlatList } from "react-native-gesture-handler";
 
 //Components
 import GoalItem from "./Goaltem";
@@ -9,8 +11,8 @@ import AddGoal from "../Buttons/AddGoal";
 
 //Store
 import goalStore from "../../stores/goalStore";
-import { SafeAreaView } from "react-native";
-import { ScrollView, FlatList } from "react-native-gesture-handler";
+
+
 
 const GoalList = ({ navigation, myGoal, goals }) => {
   const [query, setQuery] = useState("");

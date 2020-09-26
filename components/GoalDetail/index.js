@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { G, Circle } from "react-native-svg";
+import { Circle } from "react-native-svg";
 
 //Components
 import ProgressCircle from "../ProgressCircle";

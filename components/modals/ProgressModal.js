@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
-import { Modal } from "react-native";
+import { Alert, Modal } from "react-native";
+
 import progressStore from "../../stores/progressStore";
 
 //Styling
@@ -15,14 +16,30 @@ import {
   ModalView,
 } from "./styles";
 
-const ProgressModal = ({ isOpen, closeModal, oldProgress }) => {
-  const [progress, setProgress] = useState({
-    targetProgress: oldProgress.targetProgress,
-  });
+const ProgressModal = ({ isOpen, closeModal, oldProgress, goal }) => {
+  const [progress, setProgress] = useState(
+    oldProgress
+      ? {
+          targetProgress: oldProgress.targetProgress,
+          goalId: oldProgress.goalId,
+        }
+      : {
+          targetProgress: 0,
+          goalId: goal.id,
+        }
+  );
 
   const handleSubmit = () => {
-    progressStore.updateProgress(progress);
-    closeModal();
+    if (progress.targetProgress <= goal.target) {
+      progressStore.updateProgress(progress);
+      closeModal();
+    } else {
+      Alert.alert("Oops", "Sorry, You Can't acceed Your Target", [
+        {
+          text: "Go back",
+        },
+      ]);
+    }
   };
 
   return (

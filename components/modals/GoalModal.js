@@ -21,11 +21,10 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
   const [goal, setGoal] = useState(
     oldGoal ?? {
       name: "",
-      quantifiableUnits: "",
+      description: "",
       unitOfMeasure: "",
       target: 0,
       category: "",
-      popularity: 0,
     }
   );
 
@@ -36,11 +35,10 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
       goalStore.createGoal(goal);
       setGoal({
         name: "",
-        quantifiableUnits: "",
+        description: "",
         unitOfMeasure: "",
         target: 0,
         category: "",
-        popularity: 0,
       });
     }
 
@@ -70,12 +68,10 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
               value={goal.name}
             />
             <ModalTextInput
-              onChangeText={(quantifiableUnits) =>
-                setGoal({ ...goal, quantifiableUnits })
-              }
-              placeholder="Quantifiable Units"
+              onChangeText={(description) => setGoal({ ...goal, description })}
+              placeholder="Description"
               placeholderTextColor="#9d8189"
-              value={goal.quantifiableUnits}
+              value={goal.description}
             />
             <ModalTextInput
               onChangeText={(unitOfMeasure) =>
