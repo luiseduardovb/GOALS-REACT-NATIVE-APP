@@ -94,7 +94,7 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
               value={goal.category}
             />
 
-            <CreateButton onPress={handleSubmit}>
+            <CreateButton style={{ borderRadius: 20 }} onPress={handleSubmit}>
               <CreateButtonText>
                 {oldGoal ? "Update" : "Create"}
               </CreateButtonText>

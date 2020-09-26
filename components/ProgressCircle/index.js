@@ -10,8 +10,7 @@ import { Animated, Text } from "react-native";
 import progressStore from "../../stores/progressStore";
 import authStore from "../../stores/authStore";
 
-const ProgressCircle = ({ route }) => {
-  const { goal } = route.params;
+const ProgressCircle = ({ goal }) => {
   const { user } = authStore;
 
   const foundProgress = progressStore.progresses
@@ -22,7 +21,7 @@ const ProgressCircle = ({ route }) => {
   // console.log("ProgressCircle -> percentage", percentage);
   let radius = 90;
   let strokeWidth = 20;
-  let color = "blue";
+  let color = "#e5e5e5";
   let max = goal.target; ///(this would be the goal.target)
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -68,7 +67,7 @@ const ProgressCircle = ({ route }) => {
       <Text
         style={{
           fontSize: radius / 3,
-          color: color,
+          color: "#fca311",
           fontWeight: "900",
           textAlign: "center",
         }}

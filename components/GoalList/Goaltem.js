@@ -41,7 +41,6 @@ const GoalItem = ({ navigation, goal, myGoal }) => {
           <Right>
             <Text>{goal.quantifiableUnits}</Text>
             <UpdateGoal goal={goal} />
-            <UpdateProgress goal={goal} />
           </Right>
         </CardItem>
       </StyledCard>

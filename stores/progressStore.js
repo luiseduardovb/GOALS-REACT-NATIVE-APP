@@ -21,6 +21,7 @@ class ProgressStores {
       const foundProgress = this.progresses.find(
         (progress) => progress.goalId === newProgress.goalId
       );
+
       foundProgress.targetProgress = newProgress.targetProgress;
     } catch (error) {
       console.log("ProgressStores -> updateProgress -> error", error);
