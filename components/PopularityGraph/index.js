@@ -9,14 +9,14 @@ import { Animated, Text } from "react-native";
 const PopularityGraph = ({ route }) => {
   const { goal } = route.params;
 
-  let percentage = 1; /// (this would be progress.targetProgress)
+  let percentage = 10; /// (this would be progress.targetProgress)
   let radius = 90;
   let strokeWidth = 20;
   let color = "orange";
   let color2 = "lime";
   let color3 = "blue";
   let color4 = "red";
-  let max = 5; ///(this would be the goal.target)
+  let max = goal.target; ///(this would be the goal.target)
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -77,7 +77,7 @@ const PopularityGraph = ({ route }) => {
             strokeDashoffset={strokeDashoffset * 0.6}
             strokeLinecap="round"
           />
-          <Circle
+          {/* <Circle
             cx="50%"
             cy="50%"
             stroke={color3}
@@ -118,7 +118,7 @@ const PopularityGraph = ({ route }) => {
             strokeDasharray={circleCircumference}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
-          />
+          /> */}
         </G>
       </Svg>
 

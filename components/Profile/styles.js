@@ -37,7 +37,10 @@ export const LastName = styled.Text`
 `;
 
 export const StyledView = styled.View`
-  margin-left: 40px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 40px;
   margin-right: 40px;
-  margin-top: 25;
+  margin-top: 25; */
 `;

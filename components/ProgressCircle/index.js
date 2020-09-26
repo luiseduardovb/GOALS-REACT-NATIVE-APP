@@ -6,14 +6,24 @@ import Svg, { G, Circle } from "react-native-svg";
 import { StyledView } from "./styles";
 import { Animated, Text } from "react-native";
 
+//Stores
+import progressStore from "../../stores/progressStore";
+import authStore from "../../stores/authStore";
+
 const ProgressCircle = ({ route }) => {
   const { goal } = route.params;
+  const { user } = authStore;
 
-  let percentage = 1; /// (this would be progress.targetProgress)
+  const foundProgress = progressStore.progresses
+    .filter((progress) => progress.goalId === goal.id)
+    .filter((progress) => progress.profileId === user.id);
+
+  let percentage = foundProgress[0].targetProgress; /// (this would be progress.targetProgress)
+  // console.log("ProgressCircle -> percentage", percentage);
   let radius = 90;
   let strokeWidth = 20;
   let color = "blue";
-  let max = 5; ///(this would be the goal.target)
+  let max = goal.target; ///(this would be the goal.target)
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 

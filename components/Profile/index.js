@@ -34,35 +34,38 @@ import {
   BackgroundImage,
 } from "./styles";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const { user } = authStore;
   if (!user) return <Spinner />;
   const goals = goalStore.goals.filter((goal) => goal.ownerId === user.id);
 
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <UserInfo>
-          <Body>
-            <ProfileImage
-              source={{
-                uri:
-                  "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
-              }}
-            />
-            <Name>
-              <FirstName>{user.firstName}</FirstName>
-              <LastName> {user.lastName}</LastName>
-            </Name>
-            <Text>@{user.username}</Text>
-            <AddGoal />
-          </Body>
-        </UserInfo>
-        <StyledView>
-          <GoalList goals={goals} />
-        </StyledView>
-      </ScrollView>
-    </SafeAreaView>
+
+    <>
+      <SafeAreaView>
+        <ScrollView>
+          <UserInfo>
+            <Body>
+              <ProfileImage
+                source={{
+                  uri:
+                    "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
+                }}
+              />
+              <Name>
+                <FirstName>{user.firstName}</FirstName>
+                <LastName> {user.lastName}</LastName>
+              </Name>
+              <Text>@{user.username}</Text>
+            </Body>
+          </UserInfo>
+          <StyledView>
+            <GoalList goals={goals} navigation={navigation} />
+          </StyledView>
+        </ScrollView>
+      </SafeAreaView>
+      <AddGoal />
+    </>
   );
 };
 
