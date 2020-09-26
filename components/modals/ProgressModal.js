@@ -34,7 +34,7 @@ const ProgressModal = ({ isOpen, closeModal, oldProgress, goal }) => {
       progressStore.updateProgress(progress);
       closeModal();
     } else {
-      Alert.alert("Oops", "Sorry, You Can't acceed Your Target", [
+      Alert.alert("Oops", "Sorry, Your progress Can't acceed Your Target", [
         {
           text: "Go back",
         },
@@ -50,15 +50,16 @@ const ProgressModal = ({ isOpen, closeModal, oldProgress, goal }) => {
       animationType="slide"
     >
       <ModalContainer>
-        <ModalView>
+        <ModalView style={{ marginTop: 200, marginBottom: 200 }}>
           <View>
             <CloseButtonStyled
               onPress={closeModal}
               type="AntDesign"
-              name="closecircleo"
+              name="close"
             />
             <ModalTitle>Update Your Progress</ModalTitle>
             <ModalTextInput
+              style={{ marginTop: 50 }}
               onChangeText={(targetProgress) =>
                 setProgress({ ...progress, targetProgress })
               }

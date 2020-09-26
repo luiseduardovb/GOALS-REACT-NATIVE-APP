@@ -7,30 +7,41 @@ import { Circle } from "react-native-svg";
 //Components
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
-
-//Store
+import UpdateProgress from "../Buttons/UpdateProgress";
+import UpdateGoal from "../Buttons/UpdateGoal";
 
 //Styles
-import { LeaderBoard, PersonalProgress, Popularity } from "./styles";
-import { Text } from "native-base";
+
+import {
+  LeaderBoard,
+  PersonalProgress,
+  Popularity,
+  TextLeaderboardStyled,
+  TextProgressStyled,
+  TextDetailStyled,
+} from "./styles";
+import { Body, Header, Left, Spinner, Text } from "native-base";
 
 const GoalDetail = ({ route }) => {
-  const { goal } = route.params;
-
+  const goal = route.params.goal;
   return (
     <SafeAreaView>
       <ScrollView>
+        <TextDetailStyled>Description: {goal.description}</TextDetailStyled>
+        <TextDetailStyled>Target: {goal.target}</TextDetailStyled>
+        <TextDetailStyled>Category: {goal.category}</TextDetailStyled>
         <LeaderBoard>
-          <Text>Leaderboard</Text>
+          <TextLeaderboardStyled>Leaderboard</TextLeaderboardStyled>
         </LeaderBoard>
         <PersonalProgress>
-          <Text>Progress</Text>
-          <ProgressCircle route={route} />
+          <TextProgressStyled>Progress</TextProgressStyled>
+          <ProgressCircle goal={goal} />
         </PersonalProgress>
         {/* <Popularity>
           <Text>Popularity</Text>
           <PopularityGraph route={route} />
         </Popularity> */}
+        <UpdateProgress goal={goal} />
       </ScrollView>
     </SafeAreaView>
   );
