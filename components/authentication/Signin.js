@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 import RootNavigator from "../../components/Navigation";
 
+// Stores
+import authStore from "../../stores/authStore";
+
 //styles
 import {
   Background,
@@ -13,7 +16,6 @@ import {
 } from "./styles";
 import { Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import authStore from "../../stores/authStore";
 
 const Signin = ({ navigation }) => {
   const [user, setUser] = useState({

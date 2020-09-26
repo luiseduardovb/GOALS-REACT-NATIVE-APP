@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Icon } from "native-base";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
 import Profile from "../Profile";
-// import GoalDetail from "../GoalDetail";
+import GoalDetail from "../GoalDetail";
 import BottomTabNavigator from "../Navigation/BottomTabNavigator";
-import { Icon } from "native-base";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -25,13 +25,13 @@ const ProfileNavigator = ({ navigation }) => {
           ),
         }}
       />
-      {/* <Screen
+      <Screen
         name="Goal Detail"
         component={GoalDetail}
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
     </Navigator>
   );
 };

@@ -1,10 +1,14 @@
-import { Icon, Text } from "native-base";
 import React, { useState } from "react";
+
+// Stores
+import authStore from "../../stores/authStore";
+import goalStore from "../../stores/goalStore";
 
 //Components
 import GoalModal from "../modals/GoalModal";
 
 //Styles
+import { Icon, Text } from "native-base";
 import { AddButtonStyled, AddTextStyled } from "./styles";
 
 const AddButton = () => {

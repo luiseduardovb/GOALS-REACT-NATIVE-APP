@@ -2,8 +2,17 @@ import React from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+
+// Components
+import Signout from "../authentication/Signout";
+import GoalList from "../GoalList/index";
 import AddGoal from "../Buttons/AddGoal";
-//Native Base
+
+// Stores
+import authStore from "../../stores/authStore";
+import goalStore from "../../stores/goalStore";
+
+//Styles
 import {
   Text,
   Spinner,
@@ -14,8 +23,6 @@ import {
   Thumbnail,
   View,
 } from "native-base";
-
-//Styles
 import {
   UserInfo,
   FirstName,
@@ -26,12 +33,6 @@ import {
   UserName,
   BackgroundImage,
 } from "./styles";
-import authStore from "../../stores/authStore";
-import Signout from "../authentication/Signout";
-import GoalList from "../GoalList/index";
-import goalStore from "../../stores/goalStore";
-import profileStore from "../../stores/goalStore";
-import progressStore from "../../stores/progressStore";
 
 const Profile = () => {
   const { user } = authStore;
@@ -39,31 +40,29 @@ const Profile = () => {
   const goals = goalStore.goals.filter((goal) => goal.ownerId === user.id);
 
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView>
-          <UserInfo>
-            <Body>
-              <ProfileImage
-                source={{
-                  uri:
-                    "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
-                }}
-              />
-              <Name>
-                <FirstName>{user.firstName}</FirstName>
-                <LastName> {user.lastName}</LastName>
-              </Name>
-              <Text>@{user.username}</Text>
-              <AddGoal />
-            </Body>
-          </UserInfo>
-          <StyledView>
-            <GoalList goals={goals} />
-          </StyledView>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <SafeAreaView>
+      <ScrollView>
+        <UserInfo>
+          <Body>
+            <ProfileImage
+              source={{
+                uri:
+                  "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
+              }}
+            />
+            <Name>
+              <FirstName>{user.firstName}</FirstName>
+              <LastName> {user.lastName}</LastName>
+            </Name>
+            <Text>@{user.username}</Text>
+            <AddGoal />
+          </Body>
+        </UserInfo>
+        <StyledView>
+          <GoalList goals={goals} />
+        </StyledView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

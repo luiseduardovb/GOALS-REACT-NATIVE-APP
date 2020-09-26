@@ -37,7 +37,6 @@ class AuthStore {
   };
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
-    console.log("checkForToken -> token", token);
     if (token) {
       const currentTime = Date.now() / 1000;
       const user = decode(token);
@@ -54,5 +53,4 @@ decorate(AuthStore, {
   user: observable,
 });
 const authStore = new AuthStore();
-
 export default authStore;
