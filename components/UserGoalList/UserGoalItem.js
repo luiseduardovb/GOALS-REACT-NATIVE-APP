@@ -19,7 +19,10 @@ const UserGoalItem = ({ navigation, goal, myGoal }) => {
 
   return (
     <ListWrapperView>
-      <StyledRow style={{ paddingHorizontal: 2, paddingVertical: 5 }}>
+      <StyledRow
+        style={{ paddingHorizontal: 2, paddingVertical: 5 }}
+        // onPress={() => navigation.navigate("Goal Detail", { goal: goal })}
+      >
         {goal.name}
       </StyledRow>
       <StyledRow style={{ paddingHorizontal: 2, paddingVertical: 5 }}>

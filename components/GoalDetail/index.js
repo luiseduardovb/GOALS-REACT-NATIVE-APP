@@ -54,6 +54,7 @@ const GoalDetail = ({ route }) => {
           <TextProgressStyled>Progress</TextProgressStyled>
           <ProgressCircle goal={goal} />
         </PersonalProgress>
+        <UpdateProgress goal={goal} />
       </ScrollView>
     </SafeAreaView>
   );

@@ -18,9 +18,9 @@ import goalStore from "../../stores/goalStore";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-const UserGoalList = () => {
+const UserGoalList = ({ navigation }) => {
   const userGoalList = goalStore.goals.map((goal) => (
-    <UserGoalItem goal={goal} key={goal.id} />
+    <UserGoalItem navigation={navigation} goal={goal} key={goal.id} />
   ));
   return (
     <>
