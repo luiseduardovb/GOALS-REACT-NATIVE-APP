@@ -17,12 +17,11 @@ const ProgressCircle = ({ goal }) => {
     .filter((progress) => progress.goalId === goal.id)
     .filter((progress) => progress.profileId === user.id);
 
-  let percentage = foundProgress[0].targetProgress; /// (this would be progress.targetProgress)
-  // console.log("ProgressCircle -> percentage", percentage);
+  let percentage = foundProgress[0].targetProgress;
   let radius = 90;
   let strokeWidth = 20;
   let color = "#e5e5e5";
-  let max = goal.target; ///(this would be the goal.target)
+  let max = goal.target;
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
