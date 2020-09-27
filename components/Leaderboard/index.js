@@ -14,8 +14,8 @@ import { BodyView, HeaderWrapperView, HeaderTitle } from "./styles";
 import goalStore from "../../stores/goalStore";
 import authStore from "../../stores/authStore";
 
-const Leaderboard = ({ route }) => {
-  const { goal } = route.params;
+const Leaderboard = ({ goal }) => {
+  //   const { goal } = route.params;
   const { user } = authStore;
 
   const leaderboard = goalStore.goals.map((goal) => (

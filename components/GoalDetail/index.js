@@ -5,7 +5,6 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Body, Header, Left, Spinner, Text } from "native-base";
 import { Circle } from "react-native-svg";
 
-
 //Components
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
@@ -28,23 +27,22 @@ import {
 import UpdateProgress from "../Buttons/UpdateProgress";
 import UpdateGoal from "../Buttons/UpdateGoal";
 
-
 const GoalDetail = ({ route }) => {
-  const goal = route.params.goal;
+  const { goal } = route.params;
   return (
     <SafeAreaView>
       <ScrollView>
         <StyledCard>
           <StyledTitle>Leaderboard</StyledTitle>
-          <Leaderboard route={route} />
+          <Leaderboard goal={goal} />
         </StyledCard>
         <StyledCard>
           <StyledTitle>Progress</StyledTitle>
-          <ProgressCircle route={route} />
+          <ProgressCircle goal={goal} />
         </StyledCard>
         <StyledCard>
           <StyledTitle>Popularity</StyledTitle>
-          <PopularityGraph route={route} />
+          <PopularityGraph goal={goal} />
         </StyledCard>
         <TextDetailStyled>Description: {goal.description}</TextDetailStyled>
         <TextDetailStyled>Target: {goal.target}</TextDetailStyled>

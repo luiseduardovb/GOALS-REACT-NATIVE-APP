@@ -6,8 +6,8 @@ import Svg, { G, Circle } from "react-native-svg";
 import { StyledView } from "./styles";
 import { Animated, Text } from "react-native";
 
-const PopularityGraph = ({ route }) => {
-  const { goal } = route.params;
+const PopularityGraph = ({ goal }) => {
+  // const { goal } = route.params;
 
   let percentage = 10; /// (this would be progress.targetProgress)
   let radius = 90;

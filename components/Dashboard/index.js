@@ -7,6 +7,8 @@ import CategoriesPieChart from "../CategoriesPieChart";
 
 //Styles
 import { StyledView } from "./styles";
+import { SafeAreaView } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Dashboard = ({ navigation }) => {
   return (
