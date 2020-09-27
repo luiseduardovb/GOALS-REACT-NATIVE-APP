@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { G, Circle } from "react-native-svg";
 
 //Components
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
+import Leaderboard from "../Leaderboard";
 
 //Store
 
 //Styles
-import { LeaderBoard, PersonalProgress, Popularity } from "./styles";
-import { Text } from "native-base";
+import {
+  LeaderBoard,
+  PersonalProgress,
+  Popularity,
+  StyledCard,
+  StyledTitle,
+} from "./styles";
 
 const GoalDetail = ({ route }) => {
   const { goal } = route.params;
@@ -20,17 +25,18 @@ const GoalDetail = ({ route }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <LeaderBoard>
-          <Text>Leaderboard</Text>
-        </LeaderBoard>
-        <PersonalProgress>
-          <Text>Progress</Text>
+        <StyledCard>
+          <StyledTitle>Leaderboard</StyledTitle>
+          <Leaderboard route={route} />
+        </StyledCard>
+        <StyledCard>
+          <StyledTitle>Progress</StyledTitle>
           <ProgressCircle route={route} />
-        </PersonalProgress>
-        {/* <Popularity>
-          <Text>Popularity</Text>
+        </StyledCard>
+        <StyledCard>
+          <StyledTitle>Popularity</StyledTitle>
           <PopularityGraph route={route} />
-        </Popularity> */}
+        </StyledCard>
       </ScrollView>
     </SafeAreaView>
   );

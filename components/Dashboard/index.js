@@ -9,6 +9,11 @@ import GoalList from "../GoalList";
 import authStore from "../../stores/authStore";
 import progressStore from "../../stores/progressStore";
 
+//Components
+import ProgressBar from "../ProgressBar";
+import GoalChart from "../GoalChart";
+import CategoriesPieChart from "../CategoriesPieChart";
+
 //Styles
 import {
   StyledView,
@@ -23,7 +28,14 @@ import {
 import goalStore from "../../stores/goalStore";
 
 const Dashboard = ({ navigation }) => {
-  return <StyledView></StyledView>;
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <GoalChart />
+        <CategoriesPieChart />
+      </ScrollView>
+    </SafeAreaView>
+  );
 };
 
 export default observer(Dashboard);

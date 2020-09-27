@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import Svg, { G, Circle } from "react-native-svg";
 
 //Styles
-import { StyledView } from "./styles";
+import { StyledView, StyledCard } from "./styles";
 import { Animated, Text } from "react-native";
 
 //Stores
