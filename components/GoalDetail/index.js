@@ -2,31 +2,50 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { Body, Header, Left, Spinner, Text } from "native-base";
 import { Circle } from "react-native-svg";
+
 
 //Components
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
-import UpdateProgress from "../Buttons/UpdateProgress";
-import UpdateGoal from "../Buttons/UpdateGoal";
+import Leaderboard from "../Leaderboard";
+
+//Store
 
 //Styles
-
 import {
   LeaderBoard,
   PersonalProgress,
   Popularity,
+  StyledCard,
+  StyledTitle,
   TextLeaderboardStyled,
   TextProgressStyled,
   TextDetailStyled,
 } from "./styles";
-import { Body, Header, Left, Spinner, Text } from "native-base";
+
+import UpdateProgress from "../Buttons/UpdateProgress";
+import UpdateGoal from "../Buttons/UpdateGoal";
+
 
 const GoalDetail = ({ route }) => {
   const goal = route.params.goal;
   return (
     <SafeAreaView>
       <ScrollView>
+        <StyledCard>
+          <StyledTitle>Leaderboard</StyledTitle>
+          <Leaderboard route={route} />
+        </StyledCard>
+        <StyledCard>
+          <StyledTitle>Progress</StyledTitle>
+          <ProgressCircle route={route} />
+        </StyledCard>
+        <StyledCard>
+          <StyledTitle>Popularity</StyledTitle>
+          <PopularityGraph route={route} />
+        </StyledCard>
         <TextDetailStyled>Description: {goal.description}</TextDetailStyled>
         <TextDetailStyled>Target: {goal.target}</TextDetailStyled>
         <TextDetailStyled>Category: {goal.category}</TextDetailStyled>
@@ -37,11 +56,6 @@ const GoalDetail = ({ route }) => {
           <TextProgressStyled>Progress</TextProgressStyled>
           <ProgressCircle goal={goal} />
         </PersonalProgress>
-        {/* <Popularity>
-          <Text>Popularity</Text>
-          <PopularityGraph route={route} />
-        </Popularity> */}
-        <UpdateProgress goal={goal} />
       </ScrollView>
     </SafeAreaView>
   );
