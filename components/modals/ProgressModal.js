@@ -63,7 +63,7 @@ const ProgressModal = ({ isOpen, closeModal, oldProgress, goal }) => {
               onChangeText={(targetProgress) =>
                 setProgress({ ...progress, targetProgress })
               }
-              placeholder="Target"
+              placeholder="Progress"
               placeholderTextColor="#9d8189"
               value={progress.targetProgress}
             />
