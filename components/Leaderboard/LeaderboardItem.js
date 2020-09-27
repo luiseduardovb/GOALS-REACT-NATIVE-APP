@@ -10,7 +10,7 @@ const LeaderboardItem = ({ navigation, goal, user, myGoal }) => {
   return (
     <ListWrapperView>
       <StyledRow style={{ paddingHorizontal: 20, paddingVertical: 5 }}>
-        {goal.name}
+        {user.username}
       </StyledRow>
       <StyledRow style={{ paddingHorizontal: 10, paddingVertical: 5 }}>
         {goal.target}

@@ -20,7 +20,7 @@ const ProgressCircle = ({ goal }) => {
   let percentage = foundProgress[0].targetProgress;
   let radius = 90;
   let strokeWidth = 20;
-  let color = "#e5e5e5";
+  let color = "#2F72E1";
   let max = goal.target;
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);

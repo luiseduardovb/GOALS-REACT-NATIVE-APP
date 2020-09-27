@@ -1,5 +1,6 @@
 import React from "react";
 import { observer } from "mobx-react";
+import moment from "moment";
 
 //Components
 import ProgressBar from "../ProgressBar";
@@ -22,7 +23,7 @@ const UserGoalItem = ({ navigation, goal, myGoal }) => {
         {goal.name}
       </StyledRow>
       <StyledRow style={{ paddingHorizontal: 2, paddingVertical: 5 }}>
-        {goal.unitOfMeasure}
+        {moment(goal.createdAt).format("MMM Do YY")}
       </StyledRow>
       <StyledProgressView style={{ paddingHorizontal: 2, paddingVertical: 5 }}>
         <ProgressBar />
