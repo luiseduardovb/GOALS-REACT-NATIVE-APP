@@ -1,4 +1,5 @@
 import { decorate, observable } from "mobx";
+import categoryStore from "./categoryStore";
 import instance from "./instance";
 
 class GoalStore {
@@ -20,6 +21,7 @@ class GoalStore {
       const formData = new FormData();
       for (const key in newGoal) formData.append(key, newGoal[key]);
       const res = await instance.post("/goals", formData);
+      categoryStore.categories.push(newGoal.category);
       this.goals.push(res.data);
     } catch (error) {
       console.log("error", error);
@@ -28,9 +30,9 @@ class GoalStore {
 
   updateGoal = async (updatedGoal) => {
     try {
-      const formData = new FormData();
-      for (const key in updatedGoal) formData.append(key, updatedGoal[key]);
-      await instance.put(`/goals/${updatedGoal.id}`, formData);
+      // const formData = new FormData();
+      // for (const key in updatedGoal) formData.append(key, updatedGoal[key]);
+      await instance.put(`/goals/${updatedGoal.id}`, updatedGoal);
       const goal = this.goals.find((goal) => goal.id === updatedGoal.id);
       for (const key in updatedGoal) goal[key] = updatedGoal[key];
     } catch (error) {
