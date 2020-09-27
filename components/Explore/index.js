@@ -14,9 +14,9 @@ const Explore = () => {
   const [query, setQuery] = useState("");
 
   const categoryList = categoryStore.categories
-    .filter((category) =>
-      category.name.toLowerCase().includes(query.toLowerCase())
-    )
+    // .filter((category) =>
+    //   category.name.toLowerCase().includes(query.toLowerCase())
+    // )
     .map((category) => <ExploreItem category={category} key={category.id} />);
   return (
     <View>
