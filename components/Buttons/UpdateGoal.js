@@ -5,7 +5,7 @@ import { Icon, Text } from "native-base";
 import GoalModal from "../modals/GoalModal";
 
 //Styles
-import { UpdateButtonStyled } from "./styles";
+import { UpdateGoalButtonStyled, UpdateGoalTextStyled } from "./styles";
 
 const UpdateGoal = ({ goal }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,12 @@ const UpdateGoal = ({ goal }) => {
 
   return (
     <>
-      <UpdateButtonStyled
+      <UpdateGoalButtonStyled
         onPress={() => setIsOpen(true)}
         type="MaterialCommunityIcons"
         name="square-edit-outline"
       />
+      <UpdateGoalTextStyled>Edit</UpdateGoalTextStyled>
       <GoalModal isOpen={isOpen} closeModal={closeModal} oldGoal={goal} />
     </>
   );

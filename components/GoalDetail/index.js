@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { observer } from "mobx-react";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { Body, Header, Left, Spinner, Text } from "native-base";
+import { Circle } from "react-native-svg";
+
 
 //Components
 import ProgressCircle from "../ProgressCircle";
@@ -17,11 +20,17 @@ import {
   Popularity,
   StyledCard,
   StyledTitle,
+  TextLeaderboardStyled,
+  TextProgressStyled,
+  TextDetailStyled,
 } from "./styles";
 
-const GoalDetail = ({ route }) => {
-  const { goal } = route.params;
+import UpdateProgress from "../Buttons/UpdateProgress";
+import UpdateGoal from "../Buttons/UpdateGoal";
 
+
+const GoalDetail = ({ route }) => {
+  const goal = route.params.goal;
   return (
     <SafeAreaView>
       <ScrollView>
@@ -37,6 +46,16 @@ const GoalDetail = ({ route }) => {
           <StyledTitle>Popularity</StyledTitle>
           <PopularityGraph route={route} />
         </StyledCard>
+        <TextDetailStyled>Description: {goal.description}</TextDetailStyled>
+        <TextDetailStyled>Target: {goal.target}</TextDetailStyled>
+        <TextDetailStyled>Category: {goal.category}</TextDetailStyled>
+        <LeaderBoard>
+          <TextLeaderboardStyled>Leaderboard</TextLeaderboardStyled>
+        </LeaderBoard>
+        <PersonalProgress>
+          <TextProgressStyled>Progress</TextProgressStyled>
+          <ProgressCircle goal={goal} />
+        </PersonalProgress>
       </ScrollView>
     </SafeAreaView>
   );

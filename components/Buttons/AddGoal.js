@@ -1,13 +1,17 @@
-import { Icon, Text } from "native-base";
 import React, { useState } from "react";
+
+// Stores
+import authStore from "../../stores/authStore";
+import goalStore from "../../stores/goalStore";
 
 //Components
 import GoalModal from "../modals/GoalModal";
 
 //Styles
+import { Icon, Text } from "native-base";
 import { AddButtonStyled, StyledTouchableOpacity } from "./styles";
 
-const AddButton = () => {
+const AddGoal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -16,28 +20,13 @@ const AddButton = () => {
     <>
       <StyledTouchableOpacity
         activeOpacity={0.8}
-        style={{
-          backgroundColor: "#2E73B4",
-          bottom: 95,
-          right: 30,
-          width: 50,
-          height: 50,
-          borderRadius: 50,
-          position: "absolute",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
         onPress={() => setIsOpen(true)}
       >
-        <AddButtonStyled
-          size={30}
-          type="MaterialCommunityIcons"
-          name="target"
-        />
+        <AddButtonStyled size={30} type="AntDesign" name="pluscircleo" />
         <GoalModal isOpen={isOpen} closeModal={closeModal} />
       </StyledTouchableOpacity>
     </>
   );
 };
 
-export default AddButton;
+export default AddGoal;

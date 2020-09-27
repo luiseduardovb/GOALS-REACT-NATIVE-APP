@@ -1,7 +1,13 @@
 import styled from "styled-components/native";
 
 export const StyledView = styled.View`
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 25;
+  margin-top: 5px;
+`;
+
+export const ItemsStyled = styled.Text`
+  border: 1px;
+  border-radius: 9px;
+  padding: 3px;
+  width: 100px;
+  text-align: center;
 `;

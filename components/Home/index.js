@@ -15,13 +15,7 @@ const Home = ({ navigation }) => {
     <HomeImageBackground source={require(`../../focus.jpg`)}>
       <ButtonStyling>
         {user ? (
-          <SignInStyle
-            onPress={() =>
-              navigation.navigate("DrawerNavigator", { user: user })
-            }
-          >
-            Skip Sign In
-          </SignInStyle>
+          navigation.navigate("DrawerNavigator", { user: user })
         ) : (
           <SignInStyle onPress={() => navigation.navigate("Signin")}>
             Sign in

@@ -1,7 +1,12 @@
 import React from "react";
 import { observer } from "mobx-react";
 
+// Component/ Buttons
+import UpdateGoal from "../Buttons/UpdateGoal";
+import UpdateProgress from "../Buttons/UpdateProgress";
+
 // Styles
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { CardItem, Text, Left, Right, Icon } from "native-base";
 import {
   StyledCard,
@@ -11,12 +16,6 @@ import {
   ButtonWrapper,
   StyledImageSearch,
 } from "./Styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
-
-//Store
-import goalStore from "../../stores/goalStore";
-import UpdateGoal from "../Buttons/UpdateGoal";
-import progressStore from "../../stores/progressStore";
 
 const GoalItem = ({ navigation, goal, myGoal }) => {
   return (
