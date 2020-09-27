@@ -48,6 +48,15 @@ class GoalStore {
   };
 }
 
+//Follow a goal
+followGoal = async (goalId) => {
+  try {
+    await instance.post(`/goals/${goalId}`);
+  } catch (error) {
+    console.log("error follow goal:", error);
+  }
+};
+
 decorate(GoalStore, {
   goals: observable,
   loading: observable,

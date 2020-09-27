@@ -4,6 +4,17 @@ import instance from "./instance";
 class ProfileStore {
   profiles = [];
   loading = true;
+  userProfile = null;
+
+  findProfile = async (userId) => {
+    try {
+      this.userProfile = profileStore.profiles.find(
+        (user) => user.id === userId
+      );
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   fetchProfiles = async () => {
     try {

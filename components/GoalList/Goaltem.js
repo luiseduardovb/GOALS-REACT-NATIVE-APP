@@ -16,6 +16,7 @@ import {
   ButtonWrapper,
   StyledImageSearch,
 } from "./Styles";
+import goalStore from "../../stores/goalStore";
 
 const GoalItem = ({ navigation, goal, myGoal }) => {
   return (
@@ -42,6 +43,14 @@ const GoalItem = ({ navigation, goal, myGoal }) => {
             <Text>{goal.quantifiableUnits}</Text>
             <UpdateGoal goal={goal} />
           </Right>
+
+          {/* Follow Icon */}
+          <Icon
+            type="AntDesign"
+            name={goal.followed ? "PlusCircleOutlined" : "MinusCircleOutlined"}
+            style={{ color: "blue" }}
+            onPress={() => goalStore.followGoal(goal)}
+          />
         </CardItem>
       </StyledCard>
     </StyledContent>

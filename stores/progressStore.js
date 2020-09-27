@@ -9,9 +9,11 @@ class ProgressStores {
     try {
       const response = await instance.get("/progress");
       this.progresses = response.data;
+
+      console.log("PRO", this.progresses);
       this.loading = false;
     } catch (error) {
-      console.log("error", error);
+      console.log("HIII", error);
     }
   };
 
