@@ -14,7 +14,7 @@ const Dashboard = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <GoalChart />
+        <GoalChart navigation={navigation} />
         <CategoriesPieChart />
       </ScrollView>
     </SafeAreaView>
