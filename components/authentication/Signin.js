@@ -32,7 +32,7 @@ const Signin = ({ navigation }) => {
     await authStore.signin(user);
 
     if (authStore.user) {
-      navigation.navigate("DrawerNavigator", { user: user });
+      navigation.navigate("BottomTabNavigator", { user: user });
     } else {
       setUser({ ...(user.isValidUser = false) });
     }
@@ -40,7 +40,7 @@ const Signin = ({ navigation }) => {
 
   return (
     <Background>
-      {/* <Title>Sign in</Title> */}
+      <Title>Sign in</Title>
 
       <SignInput
         onChangeText={(username) => setUser({ ...user, username })}
@@ -67,7 +67,12 @@ const Signin = ({ navigation }) => {
       </PressButton>
 
       <ChangeTo onPress={() => navigation.navigate("Signup")}>
-        Don't have an account? Sign Up
+        Don't have an account?
+        <Text
+          style={{ fontWeight: "bold", color: "#525252", fontSize: "15px" }}
+        >
+          Sign Up
+        </Text>
       </ChangeTo>
     </Background>
   );

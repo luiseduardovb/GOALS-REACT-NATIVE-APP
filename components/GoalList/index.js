@@ -15,47 +15,50 @@ import progressStore from "../../stores/progressStore";
 import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 
-const GoalList = ({ route, navigation, goals }) => {
+const GoalList = ({ navigation, goals, category }) => {
   const [query, setQuery] = useState("");
 
-  const { user } = authStore;
+  // const { user } = authStore;
 
-  const progress = progressStore.progresses;
+  // const progress = progressStore.progresses;
 
-  const progressGoal = progressStore.progresses.filter(
-    (progress) => progress.profileId === user.id
-  );
+  // const progressGoal = progressStore.progresses.filter(
+  //   (progress) => progress.profileId === user.id
+  // );
 
   // console.log("PROGRESS", progress);
 
-  const followedGoalList = profileStore.profiles
-    .filter((profile) => profile.id === user.id)
-    .map((goal) => (
-      <GoalItem goal={goal} key={goal.id} navigation={navigation} />
-    ));
+  // const followedGoalList = profileStore.profiles
+  //   .filter((profile) => profile.id === user.id)
+  //   .map((goal) => (
+  //     <GoalItem goal={goal} key={goal.id} navigation={navigation} />
+  //   ));
 
   // console.log("FOLLOWED GOALS :", followedGoalList);
 
   const goalList = goals
     .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
-      <GoalItem goal={goal} key={goal.id} navigation={navigation} />
+      <GoalItem
+        goal={goal}
+        category={category}
+        key={goal.id}
+        navigation={navigation}
+      />
     ));
 
   //console.log("GOAL LIST", goalList);
 
-  const followed = goalList.goal.Profiles.filter(
-    (profile) => profile.id === user.id
-  ).map((goal) => (
-    <GoalItem goal={goal} key={goal.id} navigation={navigation} />
-  ));
+  // const followed = goalList.goal.Profiles.filter(
+  //   (profile) => profile.id === user.id
+  // ).map((goal) => (
+  //   <GoalItem goal={goal} key={goal.id} navigation={navigation} />
+  // ));
 
   return (
     <SafeAreaView>
       <SearchBar setQuery={setQuery} />
-      <ScrollView>
-        <List>{followed}</List>
-      </ScrollView>
+      <ScrollView>{goalList}</ScrollView>
     </SafeAreaView>
   );
 };

@@ -3,6 +3,7 @@ import authStore from "../../stores/authStore";
 import { useNavigation } from "@react-navigation/native";
 import { observer } from "mobx-react";
 import { Icon } from "native-base";
+import { SighoutButton } from "./styles";
 
 const Signout = () => {
   const navigation = useNavigation();
@@ -12,7 +13,7 @@ const Signout = () => {
     navigation.navigate("Home");
   };
 
-  return <Icon onPress={submit} type="AntDesign" name="logout" />;
+  return <SighoutButton onPress={submit} type="FontAwesome" name="sign-out" />;
 };
 
 export default observer(Signout);

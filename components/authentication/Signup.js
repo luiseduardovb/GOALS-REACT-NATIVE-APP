@@ -13,13 +13,14 @@ import {
   SignButton,
   ChangeTo,
 } from "./styles";
-
+import { Text } from "native-base";
 const Signup = ({ navigation }) => {
   const [user, setUser] = useState({});
 
   const handleSubmit = async () => {
     await authStore.signup(user);
-    if (authStore.user) navigation.navigate("DrawerNavigator", { user: user });
+    if (authStore.user)
+      navigation.navigate("BottomTabNavigator", { user: user });
   };
 
   return (
@@ -57,7 +58,12 @@ const Signup = ({ navigation }) => {
         <SignButton>Sign up</SignButton>
       </PressButton>
       <ChangeTo onPress={() => navigation.navigate("Signin")}>
-        Already have an account? Sign in
+        Already have an account?
+        <Text
+          style={{ fontWeight: "bold", color: "#525252", fontSize: "15px" }}
+        >
+          Sign in
+        </Text>
       </ChangeTo>
     </Background>
   );

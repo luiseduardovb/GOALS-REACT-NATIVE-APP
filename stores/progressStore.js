@@ -9,8 +9,6 @@ class ProgressStores {
     try {
       const response = await instance.get("/progress");
       this.progresses = response.data;
-
-      console.log("PRO", this.progresses);
       this.loading = false;
     } catch (error) {
       console.log("HIII", error);
@@ -25,6 +23,10 @@ class ProgressStores {
       );
 
       foundProgress.targetProgress = newProgress.targetProgress;
+      // console.log(
+      //   "ProgressStores -> updateProgress -> foundProgress.targetProgress",
+      //   foundProgress.targetProgress
+      // );
     } catch (error) {
       console.log("ProgressStores -> updateProgress -> error", error);
     }

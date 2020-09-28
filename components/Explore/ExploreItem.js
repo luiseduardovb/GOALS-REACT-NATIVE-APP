@@ -1,27 +1,29 @@
-import React from "react";
-
-//Styles
-import { StyledView, ItemsStyled } from "./styles";
-import {
-  Container,
-  Header,
-  View,
-  DeckSwiper,
-  Card,
-  CardItem,
-  Thumbnail,
-  Text,
-  Left,
-  Body,
-  Icon,
-} from "native-base";
+import React, { useState } from "react";
 import { observer } from "mobx-react";
 
-const ExploreItem = ({ category }) => {
+// Components
+import GoalList from "../GoalList";
+
+//Stores
+import categoryStore from "../../stores/categoryStore";
+
+//Styles
+import { StyledView, ItemsStyled, ItemsTextStyled } from "./styles";
+import { Icon, Button } from "native-base";
+
+const ExploreItem = ({ category, navigation }) => {
+  // const goals = goalStore.goals.filter((goal) => goal.id === category.id);
+
   return (
-    <StyledView>
-      <ItemsStyled>{category.name}</ItemsStyled>
-    </StyledView>
+    <>
+      <StyledView>
+        <ItemsStyled iconRight light>
+          <ItemsTextStyled>{category.name}</ItemsTextStyled>
+          <Icon name="arrow-down" />
+        </ItemsStyled>
+      </StyledView>
+      {/* <GoalList goals={goals} navigation={navigation} category={category} /> */}
+    </>
   );
 };
 

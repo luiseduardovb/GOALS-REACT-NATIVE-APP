@@ -18,16 +18,7 @@ const ProfileNavigator = ({ navigation }) => {
         name="Profile"
         component={Profile}
         options={{
-          headerLeft: () => (
-            <Icon
-              onPress={() => navigation.openDrawer()}
-              type="Entypo"
-              name="menu"
-              style={{ padding: 6, color: "#19294d" }}
-            />
-          ),
-          headerTransparent: true,
-          title: false,
+          headerShown: false,
         }}
       />
       <Screen
@@ -38,7 +29,7 @@ const ProfileNavigator = ({ navigation }) => {
           return {
             title: goal.name,
             headerStyle: {
-              backgroundColor: "#DE8A02",
+              backgroundColor: "#A88A93",
             },
             headerTintColor: "#fff",
             // headerTransparent: true,

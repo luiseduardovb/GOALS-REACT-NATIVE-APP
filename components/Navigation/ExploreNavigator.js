@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
 import Explore from "../Explore";
+import GoalList from "../GoalList";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -12,6 +13,13 @@ const ExploreNavigator = () => {
       <Screen
         name="Explore"
         component={Explore}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Goals"
+        component={GoalList}
         options={{
           headerShown: false,
         }}

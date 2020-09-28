@@ -66,7 +66,7 @@ const ProgressCircle = ({ goal }) => {
       <Text
         style={{
           fontSize: radius / 3,
-          color: "#fca311",
+          color: "#DCD0D4",
           fontWeight: "900",
           textAlign: "center",
         }}

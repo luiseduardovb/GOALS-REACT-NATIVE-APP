@@ -29,12 +29,13 @@ export const StyledInner2 = styled.View`
 `;
 
 export const StyledCard = styled(Card)`
-  height: 300;
+  /* height: 300; */
   margin-top: auto;
   margin-bottom: auto;
   padding: 20px;
   border-radius: 25;
   margin-top: 25px;
+  background-color: #cccccc;
 `;
 
 export const StyledText = styled.Text`
