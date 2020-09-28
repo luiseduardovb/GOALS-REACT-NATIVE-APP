@@ -8,24 +8,18 @@ import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
 import BottomTabNavigator from "./BottomTabNavigator";
-import DrawerNavigator from "./DrawerNavigator";
 
 const { Navigator, Screen } = createStackNavigator();
 
 const RootNavigator = () => {
   return (
     <Navigator initialRouteName="Home">
-      <Screen
-        name="DrawerNavigator"
-        component={DrawerNavigator}
-        options={{ headerShown: false }}
-      />
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
-      {/* <Screen
+      <Screen
         name="BottomTabNavigator"
         component={BottomTabNavigator}
         options={{ headerShown: false }}
-      /> */}
+      />
       <Screen
         name="Signin"
         component={Signin}

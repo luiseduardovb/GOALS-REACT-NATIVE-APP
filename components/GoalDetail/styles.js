@@ -21,7 +21,7 @@ export const TextLeaderboardStyled = styled.Text`
   font-weight: bold;
   margin: 5px;
   text-align: center;
-  color: #19294d;
+  color: #7a7a7a;
 `;
 export const TextDetailStyled = styled.Text`
   font-size: 15px;
@@ -33,7 +33,7 @@ export const TextProgressStyled = styled.Text`
   font-size: 15px;
   margin: 5px;
   text-align: center;
-  color: #fca311;
+  color: #dcd0d4;
   font-weight: bold;
 `;
 
@@ -48,7 +48,7 @@ export const StyledCard = styled(Card)`
 
 export const StyledTitle = styled.Text`
   font-size: 20;
-  color: black;
+  color: #7a7a7a;
   position: absolute;
   z-index: 1;
   align-self: center;

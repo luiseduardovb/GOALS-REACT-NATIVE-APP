@@ -19,7 +19,7 @@ import authStore from "../../stores/authStore";
 const { Navigator, Screen } = createDrawerNavigator();
 
 const DrawerNavigator = ({ navigation, route }) => {
-  const { user } = route.params;
+  // const { user } = route.params;
   const submit = async () => {
     await authStore.signout();
     navigation.navigate("Home");

@@ -32,16 +32,29 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
     if (oldGoal) {
       goalStore.updateGoal(goal);
     } else {
-      goalStore.createGoal(goal);
-      setGoal({
-        name: "",
-        description: "",
-        unitOfMeasure: "",
-        target: 0,
-        category: "",
-      });
+      {
+        setGoal({
+          name: null,
+          description: null,
+          unitOfMeasure: null,
+          target: null,
+          category: null,
+        })
+          ? Alert.alert("Oops", "You must forget to fill one of the field", [
+              {
+                text: "Go back",
+              },
+            ])
+          : goalStore.createGoal(goal);
+        setGoal({
+          name: "",
+          description: "",
+          unitOfMeasure: "",
+          target: 0,
+          category: "",
+        });
+      }
     }
-
     closeModal();
   };
 
@@ -63,13 +76,13 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
             <ModalTitle>Write down your Goal</ModalTitle>
             <ModalTextInput
               onChangeText={(name) => setGoal({ ...goal, name })}
-              placeholder="name"
+              placeholder="name *"
               placeholderTextColor="#9d8189"
               value={goal.name}
             />
             <ModalTextInput
               onChangeText={(description) => setGoal({ ...goal, description })}
-              placeholder="Description"
+              placeholder="Description *"
               placeholderTextColor="#9d8189"
               value={goal.description}
             />
@@ -77,24 +90,28 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
               onChangeText={(unitOfMeasure) =>
                 setGoal({ ...goal, unitOfMeasure })
               }
-              placeholder="Unit of Measure"
+              placeholder="Unit of Measure *"
               placeholderTextColor="#9d8189"
               value={goal.unitOfMeasure}
             />
             <ModalTextInput
               onChangeText={(target) => setGoal({ ...goal, target })}
-              placeholder="Target"
+              placeholder="Target *"
               placeholderTextColor="#9d8189"
               value={goal.target}
             />
-            <ModalTextInput
-              onChangeText={(category) => setGoal({ ...goal, category })}
-              placeholder="Category"
-              placeholderTextColor="#9d8189"
-              value={goal.category}
-            />
-
-            <CreateButton style={{ borderRadius: 20 }} onPress={handleSubmit}>
+            {!oldGoal && (
+              <ModalTextInput
+                onChangeText={(category) => setGoal({ ...goal, category })}
+                placeholder="Category *"
+                placeholderTextColor="#9d8189"
+                value={goal.category}
+              />
+            )}
+            <CreateButton
+              style={{ borderRadius: "20px" }}
+              onPress={handleSubmit}
+            >
               <CreateButtonText>
                 {oldGoal ? "Update" : "Create"}
               </CreateButtonText>

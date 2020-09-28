@@ -40,7 +40,6 @@ const Profile = ({ navigation }) => {
   const goals = goalStore.goals.filter((goal) => goal.ownerId === user.id);
 
   return (
-
     <>
       <SafeAreaView>
         <ScrollView>
@@ -58,6 +57,7 @@ const Profile = ({ navigation }) => {
               </Name>
               <Text>@{user.username}</Text>
             </Body>
+            <Signout />
           </UserInfo>
           <StyledView>
             <GoalList goals={goals} navigation={navigation} />

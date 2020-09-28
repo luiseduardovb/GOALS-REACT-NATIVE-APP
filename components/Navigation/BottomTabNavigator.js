@@ -1,47 +1,35 @@
 import React, { useState } from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "native-base";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //Components
-// import AddGoalNavigator from "./AddGoalNavigator";
 import ExploreNavigator from "./ExploreNavigator";
 import DashboardNavigator from "./DashboardNavigator";
-import SearchNavigator from "./SearchNavigator";
-
-import DrawerNavigator from "./DrawerNavigator";
-
-import GoalModal from "../modals/GoalModal";
-// import ProgressCircle from "../ProgressCircle";
-
-// import AddGoal from "../AddGoal/index";
+import ProfileNavigator from "./ProfileNavigator";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTabNavigator = ({ navigation, route }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const closeModal = () => setIsOpen(false);
+  const { user } = route.params;
 
   return (
     <Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        inactiveTintColor: "#DE8A02",
-        activeTintColor: "#0F192E",
-        activeBackgroundColor: "#FEB848",
+        inactiveTintColor: "#525252",
+        activeTintColor: "#525252",
+
+        activeBackgroundColor: "#CBB9BE",
       }}
     >
       <Screen
-        name="Menu"
-        component={DashboardNavigator}
+        name="Profile"
+        component={ProfileNavigator}
         options={{
-          tabBarIcon: () => (
-            <Icon
-              onPress={() => navigation.openDrawer()}
-              type="Entypo"
-              name="menu"
-            />
-          ),
-          tabBarLabel: () => false,
+          title: user.username,
+          onPress: () => navigation.navigate("Profile"),
+
+          tabBarIcon: () => <Icon name="user-alt" type="FontAwesome5" />,
         }}
       />
       <Screen
@@ -57,17 +45,10 @@ const BottomTabNavigator = ({ navigation, route }) => {
         component={ExploreNavigator}
         options={{
           onPress: () => navigation.navigate("Explore"),
-          tabBarIcon: () => <Icon name="world" type="Fontisto" />,
-        }}
-      />
-      <Screen
-        name="Search"
-        component={SearchNavigator}
-        options={{
-          onPress: () => navigation.navigate("Search"),
           tabBarIcon: () => <Icon name="search" type="Ionicons" />,
         }}
       />
+
       {/* <Screen
         name="Progress Circle"
         component={ProgressCircle}

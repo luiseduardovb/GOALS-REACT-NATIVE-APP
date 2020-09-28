@@ -1,10 +1,11 @@
+import { Icon } from "native-base";
 import styled from "styled-components/native";
 
 export const Background = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background-color: #11212c;
+  background-color: #d3c5c9;
   padding-right: 60px;
   padding-left: 60px;
   flex: 1;
@@ -24,8 +25,8 @@ export const HomeImageBackground = styled.ImageBackground`
 
 export const ChangeTo = styled.Text`
   color: white;
-  margin-top: 15px;
-  color: #fca311;
+  margin-top: 2px;
+  color: #525252;
 `;
 
 export const SignInput = styled.TextInput`
@@ -36,6 +37,7 @@ export const SignInput = styled.TextInput`
   color: white;
   border-bottom-color: grey;
   border-bottom-width: 1px;
+  font-weight: bold;
 `;
 
 export const PressButton = styled.TouchableOpacity`
@@ -47,7 +49,13 @@ export const PressButton = styled.TouchableOpacity`
 export const SignButton = styled.Text`
   font-weight: bold;
   font-size: 18px;
-  color: #fca311;
+  color: #525252;
+  border: 1px;
+  border-radius: 6px;
+  border-color: #525252;
+  padding: 6px;
+  width: 100px;
+  text-align: center;
 `;
 
 export const SignInStyle = styled.Text`
@@ -58,8 +66,14 @@ export const SignInStyle = styled.Text`
 `;
 
 export const Title = styled.Text`
-  color: #fca311;
+  color: #525252;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   border-bottom-color: white;
+`;
+
+export const SighoutButton = styled(Icon)`
+  bottom: 160px;
+  left: 335px;
+  color: #14213d;
 `;

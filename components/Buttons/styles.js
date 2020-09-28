@@ -5,23 +5,23 @@ import { TouchableOpacity } from "react-native";
 // Add Button
 export const StyledTouchableOpacity = styled.TouchableOpacity`
   background-color: #14213d;
-  bottom: 95;
-  right: 30;
-  width: 50;
-  height: 50;
-  border-radius: 50;
+  bottom: 95px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
   position: absolute;
   justify-content: center;
   align-items: center;
 `;
 
 export const AddButtonStyled = styled(Icon)`
-  color: #fca311;
+  color: #a88a93;
 `;
 
 // Add Category
 export const AddCategorylButtonStyled = styled(Icon)`
-  color: #14213d;
+  color: #1e315c;
   top: 15px;
 `;
 

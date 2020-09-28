@@ -55,7 +55,7 @@ followGoal = async (goalId) => {
   try {
     await instance.post(`/goals/${goalId}`);
   } catch (error) {
-    console.log("error follow goal:", error);
+    console.log("followGoal -> error", error);
   }
 };
 
