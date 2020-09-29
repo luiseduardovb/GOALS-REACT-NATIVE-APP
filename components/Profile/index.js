@@ -60,7 +60,7 @@ const Profile = ({ navigation }) => {
             <Signout />
           </UserInfo>
           <StyledView>
-            <GoalList goals={goals} navigation={navigation} />
+            <GoalList goals={goals} myGoals navigation={navigation} />
           </StyledView>
         </ScrollView>
       </SafeAreaView>

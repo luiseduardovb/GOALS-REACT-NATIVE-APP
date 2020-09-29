@@ -20,7 +20,7 @@ import {
   StyledImageSearch,
 } from "./Styles";
 
-const GoalItem = ({ navigation, goal, myGoal, category }) => {
+const GoalItem = ({ navigation, goal, myGoals }) => {
   return (
     <StyledContent>
       <StyledCard>
@@ -37,7 +37,7 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
               onPress={() => {
                 navigation.navigate("Goal Detail", {
                   goal: goal,
-                  category: category,
+                  myGoals: myGoals,
                 });
               }}
             >
@@ -46,7 +46,7 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
           </Left>
           <Right>
             <Text>{goal.quantifiableUnits}</Text>
-            <UpdateGoal goal={goal} />
+            {myGoals && <UpdateGoal goal={goal} />}
           </Right>
 
           {/* Follow Icon */}
@@ -59,9 +59,9 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
 
           <Text
             onPress={() => goalStore.deleteGoal(goal.id)}
-            style={{ fontSize: 25 }}
+            style={{ fontSize: 15 }}
           >
-            -
+            Unfollow
           </Text>
         </CardItem>
       </StyledCard>

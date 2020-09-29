@@ -13,17 +13,16 @@ export const ItemsStyled = styled(Button)`
   border-color: #1e315c;
 
   border-radius: 9px;
-  padding: 3px;
+  padding: 1px;
   width: 100px;
   font-weight: bold;
-  /* flex: 1; */
   text-align: center;
   color: #1e315c;
 `;
 export const ItemsTextStyled = styled.Text`
-  padding: 3px;
+  /* padding: 3px; */
   font-weight: bold;
-  /* flex: 1; */
+  flex: 1;
   text-align: center;
   color: #1e315c;
 `;
@@ -31,4 +30,5 @@ export const ItemsTextStyled = styled.Text`
 export const HeaderWrapperView = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 `;

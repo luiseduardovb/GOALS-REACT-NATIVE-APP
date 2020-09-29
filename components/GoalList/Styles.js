@@ -31,24 +31,24 @@ export const ButtonWrapper = styled(View)`
 `;
 
 export const StyledImage = styled(Image)`
-  height: 200;
-  width: 200;
+  height: 200px;
+  width: 200px;
   flex: 1;
 `;
 export const StyledImageSearch = styled(Image)`
-  width: 150;
-  height: 200;
+  width: 150px;
+  height: 200px;
   flex: 1;
   flex-direction: row;
 `;
 
 export const StyledCard = styled(Card)`
-  border-radius: 0;
+  border-radius: 0px;
 `;
 
 export const StyledContent = styled(Content)`
-  border-radius: 25;
-  width: 300;
+  border-radius: 25px;
+  width: 300px;
 `;
 
 export const StyledView = styled.View`

@@ -3,18 +3,18 @@ import { Card } from "native-base";
 
 export const StyledView = styled.View`
   width: 100%;
-  height: 20;
+  height: 20px;
   /* padding: 3px; */
   border-color: grey;
   border-width: 2;
-  border-radius: 20;
+  border-radius: 20px;
   margin: auto;
   justify-content: center;
 `;
 
 export const StyledInner = styled.View`
   width: 100%;
-  height: 17%;
+  height: 100%;
   border-radius: 15px;
   background-color: #19294d;
   margin-top: auto;
@@ -22,7 +22,7 @@ export const StyledInner = styled.View`
 `;
 
 export const StyledText = styled.Text`
-  font-size: 13;
+  font-size: 13px;
   color: white;
   position: absolute;
   z-index: 1;

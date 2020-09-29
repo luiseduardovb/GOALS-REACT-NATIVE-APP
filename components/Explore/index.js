@@ -14,6 +14,8 @@ import SearchBar from "../Search/SearchBar";
 //Stores
 import categoryStore from "../../stores/categoryStore";
 import ExploreItem from "./ExploreItem";
+import goalStore from "../../stores/goalStore";
+import GoalList from "../GoalList";
 
 const Explore = ({ navigation }) => {
   const [query, setQuery] = useState("");
@@ -31,7 +33,7 @@ const Explore = ({ navigation }) => {
         key={category.id}
       />
     ));
-
+  const goals = goalStore.goals;
   return (
     <View>
       <Header>
@@ -45,6 +47,9 @@ const Explore = ({ navigation }) => {
           <HeaderWrapperView>{categoryList}</HeaderWrapperView>
         </ScrollView>
       </SafeAreaView>
+      <View style={{ marginLeft: "auto", marginRight: "auto" }}>
+        <GoalList goals={goals} navigation={navigation} exploreGoals />
+      </View>
     </View>
   );
 };

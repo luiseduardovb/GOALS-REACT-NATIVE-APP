@@ -33,6 +33,7 @@ const ProfileNavigator = ({ navigation }) => {
             },
             headerTintColor: "#fff",
             // headerTransparent: true,
+            // headerBackTitle: false,
           };
         }}
       />

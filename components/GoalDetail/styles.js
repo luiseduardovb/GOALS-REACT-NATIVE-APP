@@ -7,7 +7,7 @@ export const LeaderBoard = styled.View`
 
 export const Popularity = styled.View`
   border-bottom-color: grey;
-  border-bottom-width: 1;
+  border-bottom-width: 1px;
 `;
 
 export const PersonalProgress = styled.View`
@@ -38,20 +38,20 @@ export const TextProgressStyled = styled.Text`
 `;
 
 export const StyledCard = styled(Card)`
-  height: 275;
+  height: 275px;
   margin-top: auto;
   margin-bottom: auto;
   padding: 20px;
-  border-radius: 25;
+  border-radius: 25px;
   margin-top: 25px;
 `;
 
 export const StyledTitle = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   color: #7a7a7a;
   position: absolute;
   z-index: 1;
   align-self: center;
-  padding-top: 25;
-  padding-bottom: 30;
+  padding-top: 25px;
+  padding-bottom: 30px;
 `;

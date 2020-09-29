@@ -10,19 +10,21 @@ import categoryStore from "../../stores/categoryStore";
 //Styles
 import { StyledView, ItemsStyled, ItemsTextStyled } from "./styles";
 import { Icon, Button } from "native-base";
+import goalStore from "../../stores/goalStore";
 
 const ExploreItem = ({ category, navigation }) => {
-  // const goals = goalStore.goals.filter((goal) => goal.id === category.id);
+  // const goals = goalStore.goals.filter(
+  //   (goal) => goal.category === category.name
+  // );
 
   return (
     <>
       <StyledView>
-        <ItemsStyled iconRight light>
+        <ItemsStyled>
           <ItemsTextStyled>{category.name}</ItemsTextStyled>
-          <Icon name="arrow-down" />
         </ItemsStyled>
       </StyledView>
-      {/* <GoalList goals={goals} navigation={navigation} category={category} /> */}
+      {/* <GoalList goals={goals} navigation={navigation} exploreGoals /> */}
     </>
   );
 };

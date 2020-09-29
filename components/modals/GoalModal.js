@@ -100,18 +100,13 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
               placeholderTextColor="#9d8189"
               value={goal.target}
             />
-            {!oldGoal && (
-              <ModalTextInput
-                onChangeText={(category) => setGoal({ ...goal, category })}
-                placeholder="Category *"
-                placeholderTextColor="#9d8189"
-                value={goal.category}
-              />
-            )}
-            <CreateButton
-              style={{ borderRadius: "20px" }}
-              onPress={handleSubmit}
-            >
+            <ModalTextInput
+              onChangeText={(category) => setGoal({ ...goal, category })}
+              placeholder="Category *"
+              placeholderTextColor="#9d8189"
+              value={goal.category}
+            />
+            <CreateButton style={{ borderRadius: 20 }} onPress={handleSubmit}>
               <CreateButtonText>
                 {oldGoal ? "Update" : "Create"}
               </CreateButtonText>

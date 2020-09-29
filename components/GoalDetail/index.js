@@ -24,8 +24,7 @@ import {
 } from "./styles";
 
 const GoalDetail = ({ route }) => {
-  console.log("GoalDetail -> route", route);
-  const { goal, category } = route.params;
+  const { goal } = route.params;
   return (
     <SafeAreaView>
       <ScrollView>
@@ -45,7 +44,7 @@ const GoalDetail = ({ route }) => {
         <TextDetailStyled>
           Target: {goal.target} {goal.unitOfMeasure}
         </TextDetailStyled>
-        <TextDetailStyled>Category: {category.name}</TextDetailStyled>
+        <TextDetailStyled>Category: {goal.category}</TextDetailStyled>
         <LeaderBoard>
           <TextLeaderboardStyled>Leaderboard</TextLeaderboardStyled>
         </LeaderBoard>

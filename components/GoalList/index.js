@@ -15,7 +15,7 @@ import progressStore from "../../stores/progressStore";
 import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 
-const GoalList = ({ navigation, goals, category }) => {
+const GoalList = ({ navigation, goals, myGoals, exploreGoals }) => {
   const [query, setQuery] = useState("");
 
   // const { user } = authStore;
@@ -41,8 +41,8 @@ const GoalList = ({ navigation, goals, category }) => {
     .map((goal) => (
       <GoalItem
         goal={goal}
-        category={category}
         key={goal.id}
+        myGoals={myGoals}
         navigation={navigation}
       />
     ));
@@ -57,7 +57,8 @@ const GoalList = ({ navigation, goals, category }) => {
 
   return (
     <SafeAreaView>
-      <SearchBar setQuery={setQuery} />
+      {!exploreGoals && <SearchBar setQuery={setQuery} />}
+
       <ScrollView>{goalList}</ScrollView>
     </SafeAreaView>
   );
