@@ -30,7 +30,7 @@ export const ModalContainer = styled.View`
 export const ModalView = styled.View`
   flex: 1;
   background-color: #ffffff;
-  border-radius: 10;
+  border-radius: 10px;
   padding: 20px;
   margin: 50px 30px 170px;
 `;

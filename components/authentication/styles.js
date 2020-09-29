@@ -60,7 +60,7 @@ export const SignButton = styled.Text`
 
 export const SignInStyle = styled.Text`
   color: #fca311;
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 `;

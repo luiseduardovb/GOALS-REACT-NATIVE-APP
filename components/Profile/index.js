@@ -74,6 +74,7 @@ const Profile = ({ navigation }) => {
             <Signout />
           </UserInfo>
           <StyledView>
+//             <GoalList goals={goals} myGoals navigation={navigation} />
             <Text>Goals Created by this profile</Text>
             <GoalList
               profileOwnedGoals={profileOwnedGoals}

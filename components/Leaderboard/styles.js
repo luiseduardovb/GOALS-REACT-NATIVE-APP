@@ -16,20 +16,20 @@ export const ListWrapperView = styled.View`
 export const HeaderWrapperView = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  border-bottom-width: 0.5;
-  padding-top: 40;
+  border-bottom-width: 0.5px;
+  padding-top: 40px;
 `;
 
 export const StyledRow = styled.Text`
   background-color: white;
   flex: 1;
-  font-size: 14;
+  font-size: 14px;
 `;
 
 export const HeaderTitle = styled.Text`
   background-color: white;
   flex: 1;
-  font-size: 14;
+  font-size: 14px;
   font-weight: bold;
 `;
 

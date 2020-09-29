@@ -3,7 +3,7 @@ import { Image } from "react-native";
 
 export const UserInfo = styled.View`
   border-bottom-color: grey;
-  border-bottom-width: 1;
+  border-bottom-width: 1px;
 `;
 
 export const BackgroundImage = styled.ImageBackground`
@@ -15,7 +15,7 @@ export const ProfileImage = styled(Image)`
   margin-bottom: 10px;
   width: 90px;
   height: 90px;
-  border-radius: 50;
+  border-radius: 50px;
 `;
 
 export const Name = styled.View`

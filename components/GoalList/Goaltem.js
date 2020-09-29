@@ -22,8 +22,7 @@ import {
   StyledImageSearch,
 } from "./Styles";
 
-const GoalItem = ({ navigation, goal, myGoal, category }) => {
-  // console.log("GoalItem -> goal", goal.id);
+const GoalItem = ({ navigation, goal, myGoals, category }) => {
 
   const goalId = goal.id;
 
@@ -36,7 +35,7 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
               onPress={(goalId) => {
                 navigation.navigate("Goal Detail", {
                   goal: goal,
-                  category: category,
+                  myGoals: myGoals,
                 });
                 progressStore.fetchGoalProgresses(goalId);
               }}
@@ -47,7 +46,7 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
 
           <Right>
             <Text>{goal.quantifiableUnits}</Text>
-            <UpdateGoal goal={goal} />
+            {myGoals && <UpdateGoal goal={goal} />}
           </Right>
 
           {/* <Icon
@@ -56,6 +55,7 @@ const GoalItem = ({ navigation, goal, myGoal, category }) => {
             style={{ color: "blue" }}
             onPress={() => goalStore.followGoal(goal)}
           /> */}
+
           {goal.followed ? (
             <FollowGoal goal={goal} />
           ) : (

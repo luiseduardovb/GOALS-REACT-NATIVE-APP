@@ -59,7 +59,7 @@ const Signin = ({ navigation }) => {
       />
 
       <TouchableOpacity onPress={PasswordAppearance}>
-        <Text style={{ fontSize: 16, color: "grey" }}>Show Password</Text>
+        <Text style={{ fontSize: "16px", color: "grey" }}>Show Password</Text>
       </TouchableOpacity>
 
       <PressButton onPress={handleSubmit}>
