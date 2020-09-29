@@ -15,7 +15,7 @@ import progressStore from "../../stores/progressStore";
 import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 
-const GoalList = ({ navigation, goals, category }) => {
+const GoalList = ({ profileOwnedGoals, navigation, goals, category }) => {
   const [query, setQuery] = useState("");
 
   // const { user } = authStore;
@@ -36,7 +36,7 @@ const GoalList = ({ navigation, goals, category }) => {
 
   // console.log("FOLLOWED GOALS :", followedGoalList);
 
-  const goalList = goals
+  const goalList = profileOwnedGoals
     .filter((goal) => goal.name.toLowerCase().includes(query.toLowerCase()))
     .map((goal) => (
       <GoalItem

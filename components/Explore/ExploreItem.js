@@ -18,7 +18,7 @@ const ExploreItem = ({ category, navigation }) => {
     <>
       <StyledView>
         <ItemsStyled iconRight light>
-          <ItemsTextStyled>{category.name}</ItemsTextStyled>
+          <ItemsTextStyled>CATEGORY.NAME</ItemsTextStyled>
           <Icon name="arrow-down" />
         </ItemsStyled>
       </StyledView>

@@ -14,7 +14,7 @@ export const StyledView = styled.View`
 
 export const StyledInner = styled.View`
   width: 100%;
-  height: 17%;
+  height: 90%;
   border-radius: 15px;
   background-color: #19294d;
   margin-top: auto;
