@@ -4,9 +4,11 @@ import { observer } from "mobx-react";
 // Component/ Buttons
 import UpdateGoal from "../Buttons/UpdateGoal";
 import UpdateProgress from "../Buttons/UpdateProgress";
+import FollowGoal from "../Buttons/FollowGoal";
 
 // Stores
 import goalStore from "../../stores/goalStore";
+import progressStore from "../../stores/progressStore";
 
 // Styles
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -20,36 +22,33 @@ import {
   StyledImageSearch,
 } from "./Styles";
 
-const GoalItem = ({ navigation, goal, myGoals }) => {
+const GoalItem = ({ navigation, goal, myGoals, category }) => {
+
+  const goalId = goal.id;
+
   return (
     <StyledContent>
       <StyledCard>
-        <CardItem cardBody>
-          {/* <StyledImage
-            source={{
-              uri: "https://wallpapercave.com/wp/wp1984340.jpg",
-            }}
-          /> */}
-        </CardItem>
         <CardItem>
           <Left>
             <Text
-              onPress={() => {
+              onPress={(goalId) => {
                 navigation.navigate("Goal Detail", {
                   goal: goal,
                   myGoals: myGoals,
                 });
+                progressStore.fetchGoalProgresses(goalId);
               }}
             >
               {goal.name}
             </Text>
           </Left>
+
           <Right>
             <Text>{goal.quantifiableUnits}</Text>
             {myGoals && <UpdateGoal goal={goal} />}
           </Right>
 
-          {/* Follow Icon */}
           {/* <Icon
             type="AntDesign"
             name={goal.followed ? "PlusCircleOutlined" : "MinusCircleOutlined"}
@@ -57,12 +56,16 @@ const GoalItem = ({ navigation, goal, myGoals }) => {
             onPress={() => goalStore.followGoal(goal)}
           /> */}
 
-          <Text
-            onPress={() => goalStore.deleteGoal(goal.id)}
-            style={{ fontSize: 15 }}
-          >
-            Unfollow
-          </Text>
+          {goal.followed ? (
+            <FollowGoal goal={goal} />
+          ) : (
+            <Text
+              onPress={() => goalStore.deleteGoal(goal.id)}
+              style={{ fontSize: 25 }}
+            >
+              -
+            </Text>
+          )}
         </CardItem>
       </StyledCard>
     </StyledContent>

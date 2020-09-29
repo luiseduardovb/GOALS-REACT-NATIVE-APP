@@ -1,26 +1,32 @@
 import { decorate, observable } from "mobx";
 import instance from "./instance";
+import authStore from "./authStore";
 
 class ProfileStore {
   profiles = [];
   loading = true;
   userProfile = null;
 
-  findProfile = async (userId) => {
+  fetchProfiles = async () => {
     try {
-      this.userProfile = profileStore.profiles.find(
-        (user) => user.id === userId
-      );
+      const response = await instance.get("/profile");
+      // console.log(
+      //   "ProfileStore -> fetchProfiles -> response",
+      //   response.data[0].userId
+      // );
+      this.profiles = response.data;
+      this.loading = false;
     } catch (error) {
       console.log("error", error);
     }
   };
-
-  fetchProfiles = async () => {
+  findProfile = async () => {
+    console.log("ProfileStore -> user", user);
     try {
-      const response = await instance.get("/profile");
-      this.profiles = response.data;
-      this.loading = false;
+      console.log("ProfileStore -> findProfile -> profiles", this.profiles);
+      const userId = authStore.user.id;
+      const profileIndex = this.profiles.findIndex((profile) => userId === 3);
+      console.log("ProfileStore -> findProfile -> profileIndex", profileIndex);
     } catch (error) {
       console.log("error", error);
     }
@@ -30,8 +36,10 @@ class ProfileStore {
 decorate(ProfileStore, {
   profiles: observable,
   loading: observable,
+  userProfile: observable,
 });
 
 const profileStore = new ProfileStore();
 profileStore.fetchProfiles();
+profileStore.findProfile();
 export default profileStore;

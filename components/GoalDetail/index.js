@@ -10,6 +10,7 @@ import UpdateProgress from "../Buttons/UpdateProgress";
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
 import Leaderboard from "../Leaderboard";
+//Stores
 
 //Styles
 import {
@@ -25,6 +26,7 @@ import {
 
 const GoalDetail = ({ route }) => {
   const { goal } = route.params;
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -44,7 +46,8 @@ const GoalDetail = ({ route }) => {
         <TextDetailStyled>
           Target: {goal.target} {goal.unitOfMeasure}
         </TextDetailStyled>
-        <TextDetailStyled>Category: {goal.category}</TextDetailStyled>
+
+        <TextDetailStyled>Category: {goal.name}</TextDetailStyled>
         <LeaderBoard>
           <TextLeaderboardStyled>Leaderboard</TextLeaderboardStyled>
         </LeaderBoard>
