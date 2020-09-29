@@ -18,6 +18,9 @@ export const StyledTouchableOpacity = styled.TouchableOpacity`
 export const AddButtonStyled = styled(Icon)`
   color: #a88a93;
 `;
+export const FollowButtonStyled = styled(Icon)`
+  color: black;
+`;
 
 // Add Category
 export const AddCategorylButtonStyled = styled(Icon)`

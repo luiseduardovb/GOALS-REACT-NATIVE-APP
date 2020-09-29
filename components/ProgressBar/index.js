@@ -12,7 +12,10 @@ import {
   StyledTitle,
 } from "./styles";
 
-const ProgressBar = () => {
+const ProgressBar = ({ navigation }) => {
+  // const leaderboardProgress = progress.goalProgresses;
+  // console.log("ProgressBar -> leaderboardProgress", leaderboardProgress);
+
   return (
     <>
       <StyledView>

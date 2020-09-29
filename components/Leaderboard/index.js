@@ -11,16 +11,28 @@ import LeaderboardItem from "./LeaderboardItem";
 import { BodyView, HeaderWrapperView, HeaderTitle } from "./styles";
 
 //Stores
+import progressStore from "../../stores/progressStore";
 import goalStore from "../../stores/goalStore";
 import authStore from "../../stores/authStore";
 
 const Leaderboard = ({ goal }) => {
   //   const { goal } = route.params;
   const { user } = authStore;
+  // const { progress } = progressStore;
 
   const leaderboard = goalStore.goals.map((goal) => (
-    <LeaderboardItem goal={goal} user={user} key={goal.id} />
+    <LeaderboardItem
+      goal={goal}
+      user={user}
+      key={goal.id}
+      // progress={progress}
+    />
   ));
+
+  // const leaderboardProgress = progressStore.goalProgresses.map((progress) => (
+  //   <LeaderboardItem progress={progress} user={user} key={progress.id} />
+  // ));
+
   return (
     <>
       <HeaderWrapperView>
@@ -35,6 +47,8 @@ const Leaderboard = ({ goal }) => {
         <SafeAreaView>
           <ScrollView>
             <List>{leaderboard}</List>
+            {/* <Text>SPACE</Text>
+            <List>{leaderboardProgress}</List> */}
           </ScrollView>
         </SafeAreaView>
       </BodyView>
