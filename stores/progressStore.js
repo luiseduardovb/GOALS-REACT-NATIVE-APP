@@ -7,7 +7,6 @@ class ProgressStores {
   loading = true;
 
   fetchGoalProgresses = async (goalId) => {
-    console.log("ProgressStores -> fetchGoalProgresses -> goalId", goalId);
     try {
       const response = await instance.get(`/progress/goal/${goalId}`);
       // console.log(
