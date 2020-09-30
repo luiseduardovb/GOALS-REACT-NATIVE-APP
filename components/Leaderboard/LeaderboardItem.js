@@ -10,8 +10,6 @@ import ProgressBar from "../ProgressBar";
 //Store
 
 const LeaderboardItem = ({ navigation, goal, user, myGoal, progress }) => {
-  console.log("LeaderboardItem -> progress", progress);
-
   return (
     <ListWrapperView>
       <Left>

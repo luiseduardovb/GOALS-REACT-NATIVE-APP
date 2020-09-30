@@ -32,9 +32,3 @@ export const HeaderWrapperView = styled.View`
   flex-wrap: wrap;
   margin-bottom: 10px;
 `;
-
-export const HomeImageBackground = styled.ImageBackground`
-  width: 100%;
-  height: 100%;
-  align-items: center;
-`;
