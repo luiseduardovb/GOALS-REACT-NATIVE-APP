@@ -20,7 +20,7 @@ const LeaderboardItem = ({ navigation, goal, user, myGoal, progress }) => {
         </StyledRow>
       </Left>
       <Right>
-        <ProgressBar navigation={navigation} />
+        <ProgressBar navigation={navigation} goal={goal} />
       </Right>
     </ListWrapperView>
   );

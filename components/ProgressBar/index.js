@@ -2,6 +2,10 @@ import React from "react";
 import { observer } from "mobx-react";
 import { View, Animated, Text } from "react-native";
 
+//Stores
+import authStore from "../../stores/authStore";
+import goalStore from "../../stores/goalStore";
+
 //Styles
 import {
   StyledCard,
@@ -12,10 +16,11 @@ import {
   StyledTitle,
 } from "./styles";
 
-const ProgressBar = ({ navigation }) => {
-  // const leaderboardProgress = progress.goalProgresses;
-  // console.log("ProgressBar -> leaderboardProgress", leaderboardProgress);
-
+const ProgressBar = ({ navigation, goal }) => {
+  const profile = authStore.userProfile.filter(
+    (profile) => profile.id === goal.ownerId
+  );
+  console.log("ProgressBar -> userProgress", profile);
   return (
     <>
       <StyledView>

@@ -29,7 +29,7 @@ const UserGoalItem = ({ navigation, goal, myGoal }) => {
         {moment(goal.createdAt).format("MMM Do YY")}
       </StyledRow>
       <StyledProgressView style={{ paddingHorizontal: 2, paddingVertical: 5 }}>
-        <ProgressBar />
+        <ProgressBar navigation={navigation} goal={goal} />
       </StyledProgressView>
     </ListWrapperView>
   );
