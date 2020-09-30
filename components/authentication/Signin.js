@@ -13,6 +13,7 @@ import {
   PressButton,
   SignButton,
   ChangeTo,
+  HomeImageBackground,
 } from "./styles";
 import { Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -39,42 +40,50 @@ const Signin = ({ navigation }) => {
   };
 
   return (
-    <Background>
-      <Title>Sign in</Title>
+    <HomeImageBackground source={require(`../../image2.png`)}>
+      <Background>
+        <Title>Goal Tracker</Title>
 
-      <SignInput
-        onChangeText={(username) => setUser({ ...user, username })}
-        placeholder="Username"
-        placeholderTextColor="white"
-        autoCapitalize="none"
-        value={user.username}
-      />
+        <SignInput
+          onChangeText={(username) => setUser({ ...user, username })}
+          placeholder="Username"
+          placeholderTextColor="white"
+          autoCapitalize="none"
+          value={user.username}
+        />
 
-      <SignInput
-        onChangeText={(password) => setUser({ ...user, password })}
-        placeholder="Password"
-        placeholderTextColor="white"
-        secureTextEntry={appearPass ? false : true}
-        value={user.password}
-      />
+        <SignInput
+          onChangeText={(password) => setUser({ ...user, password })}
+          placeholder="Password"
+          placeholderTextColor="white"
+          secureTextEntry={appearPass ? false : true}
+          value={user.password}
+        />
 
-      <TouchableOpacity onPress={PasswordAppearance}>
-        <Text style={{ fontSize: "16px", color: "grey" }}>Show Password</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={PasswordAppearance}>
+          <Text style={{ fontSize: "16px", color: "#e5e5e5" }}>
+            Show Password
+          </Text>
+        </TouchableOpacity>
 
-      <PressButton onPress={handleSubmit}>
-        <SignButton>Sign in</SignButton>
-      </PressButton>
+        <PressButton onPress={handleSubmit}>
+          <SignButton>Sign in</SignButton>
+        </PressButton>
 
-      <ChangeTo onPress={() => navigation.navigate("Signup")}>
-        Don't have an account?
-        <Text
-          style={{ fontWeight: "bold", color: "#525252", fontSize: "15px" }}
-        >
-          Sign Up
-        </Text>
-      </ChangeTo>
-    </Background>
+        <ChangeTo onPress={() => navigation.navigate("Signup")}>
+          Don't have an account?
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: "white",
+              fontSize: 15,
+            }}
+          >
+            Sign Up
+          </Text>
+        </ChangeTo>
+      </Background>
+    </HomeImageBackground>
   );
 };
 

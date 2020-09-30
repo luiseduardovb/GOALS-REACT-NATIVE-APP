@@ -24,8 +24,9 @@ export const FollowButtonStyled = styled(Icon)`
 
 // Add Category
 export const AddCategorylButtonStyled = styled(Icon)`
-  color: #1e315c;
+  color: #3d3d3d;
   top: 15px;
+  right: 5px;
 `;
 
 // Update Progress
