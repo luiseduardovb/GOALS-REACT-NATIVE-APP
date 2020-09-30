@@ -5,6 +5,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 class AuthStore {
   user = null;
+  userProfile = null;
 
   setUser = async (token) => {
     await AsyncStorage.setItem("myToken", token);
@@ -15,6 +16,7 @@ class AuthStore {
   signup = async (userData) => {
     try {
       const res = await instance.post("/signup", userData);
+      this.userProfile = await instance.get(`/profile/user/${this.user.id}`);
       await this.setUser(res.data.token);
     } catch (error) {
       console.log("signup error:", error);
@@ -24,6 +26,7 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await instance.post("/signin", userData);
+      this.userProfile = await instance.get(`/profile/user/${this.user.id}`);
       await this.setUser(res.data.token);
     } catch (error) {
       console.log("signin error:", error);
@@ -51,6 +54,7 @@ class AuthStore {
 
 decorate(AuthStore, {
   user: observable,
+  userProfile: observable,
 });
 const authStore = new AuthStore();
 export default authStore;

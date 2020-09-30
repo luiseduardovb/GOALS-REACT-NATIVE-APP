@@ -9,8 +9,10 @@ import ProgressBar from "../ProgressBar";
 
 //Store
 
+
 const LeaderboardItem = ({ navigation, goal, user, goalComplete }) => {
   // console.log("LeaderboardItem -> goal", goal);
+
 
   return (
     <ListWrapperView>
@@ -19,6 +21,7 @@ const LeaderboardItem = ({ navigation, goal, user, goalComplete }) => {
           {user.username}
         </StyledRow>
       </Left>
+
       <Right style={{ paddingTop: 5 }}>
         <StyledRow style={{ marginRight: 100, paddingVertical: 5 }}>
           {`${goal.Progress.targetProgress} / ${goalComplete.target}`}

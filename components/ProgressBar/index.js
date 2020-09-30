@@ -17,6 +17,12 @@ import {
 } from "./styles";
 
 const ProgressBar = ({ navigation, goal }) => {
+
+  const profile = authStore.userProfile.filter(
+    (profile) => profile.id === goal.ownerId
+  );
+  console.log("ProgressBar -> userProgress", profile);
+
   return (
     <>
       <StyledView>
