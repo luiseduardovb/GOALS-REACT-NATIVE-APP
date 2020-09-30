@@ -16,15 +16,20 @@ import goalStore from "../../stores/goalStore";
 import authStore from "../../stores/authStore";
 
 const Leaderboard = ({ goal }) => {
-  //   const { goal } = route.params;
+  // console.log("Leaderboard -> goal", goal);
   const { user } = authStore;
-  // const { progress } = progressStore;
 
-  const leaderboard = goalStore.goals.map((goal) => (
+  const goalComplete = goal;
+
+  const leaderboard = goalStore.goals.find((_goal) => _goal.id === goal.id);
+  // console.log("Leaderboard -> leaderboard", leaderboard);
+
+  const something = leaderboard.profile.map((profile) => (
     <LeaderboardItem
-      goal={goal}
+      goal={profile}
       user={user}
-      key={goal.id}
+      key={profile.id}
+      goalComplete={goalComplete}
       // progress={progress}
     />
   ));
@@ -46,7 +51,7 @@ const Leaderboard = ({ goal }) => {
       <BodyView>
         <SafeAreaView>
           <ScrollView>
-            <List>{leaderboard}</List>
+            <List>{something}</List>
             {/* <Text>SPACE</Text>
             <List>{leaderboardProgress}</List> */}
           </ScrollView>

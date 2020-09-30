@@ -42,16 +42,10 @@ const Profile = ({ navigation }) => {
 
   if (!user) return <Spinner />;
 
-  // const example = profileStore.userProfile;
-  // console.log("Profile -> example", example);
-
-  const profileOwnedGoals = goalStore.goals.filter(
-    (goal) => goal.ownerId === user.id
+  const profileOwnedGoals = profileStore.profiles.find(
+    (profile) => profile.userId === user.id
   );
-
-  const goals = progressStore.goalProgresses.filter(
-    (progress) => progress.profileId === profileStore.userProfile.id
-  );
+  console.log("Profile -> profileOwnedGoals", profileOwnedGoals);
 
   return (
     <>
@@ -74,17 +68,8 @@ const Profile = ({ navigation }) => {
             <Signout />
           </UserInfo>
           <StyledView>
-            {/* //             <GoalList goals={goals} myGoals navigation={navigation} /> */}
-            <Text>Goals Created by this profile</Text>
-            <GoalList
-              profileOwnedGoals={profileOwnedGoals}
-              navigation={navigation}
-            />
+            <GoalList goals={profileOwnedGoals.goal} navigation={navigation} />
           </StyledView>
-          {/* <StyledView>
-            <Text>Goals Followed by this profile</Text>
-            <GoalList goals={goals} navigation={navigation} />
-          </StyledView> */}
         </ScrollView>
       </SafeAreaView>
       <AddGoal />
