@@ -10,6 +10,7 @@ import UpdateProgress from "../Buttons/UpdateProgress";
 import ProgressCircle from "../ProgressCircle";
 import PopularityGraph from "../PopularityGraph";
 import Leaderboard from "../Leaderboard";
+import Comment from "../Comments";
 //Stores
 
 //Styles
@@ -56,6 +57,7 @@ const GoalDetail = ({ route }) => {
           <ProgressCircle goal={goal} />
         </PersonalProgress>
         <UpdateProgress goal={goal} />
+        <Comment goal={goal} />
       </ScrollView>
     </SafeAreaView>
   );

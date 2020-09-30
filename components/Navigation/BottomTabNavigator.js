@@ -19,7 +19,7 @@ const BottomTabNavigator = ({ navigation, route }) => {
         inactiveTintColor: "#525252",
         activeTintColor: "#525252",
 
-        activeBackgroundColor: "#CBB9BE",
+        activeBackgroundColor: "#707070",
       }}
     >
       <Screen
