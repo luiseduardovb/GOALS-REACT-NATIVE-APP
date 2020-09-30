@@ -17,15 +17,17 @@ import {
 } from "./styles";
 
 const ProgressBar = ({ navigation, goal }) => {
+
   const profile = authStore.userProfile.filter(
     (profile) => profile.id === goal.ownerId
   );
   console.log("ProgressBar -> userProgress", profile);
+
   return (
     <>
       <StyledView>
-        <StyledInner>
-          <StyledText>100%</StyledText>
+        <StyledInner style={{ width: goal.Progress.targetProgress }}>
+          <StyledText>{goal.Progress.targetProgress}%</StyledText>
         </StyledInner>
       </StyledView>
     </>

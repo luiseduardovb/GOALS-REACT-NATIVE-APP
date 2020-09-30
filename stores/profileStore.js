@@ -5,7 +5,7 @@ import authStore from "./authStore";
 class ProfileStore {
   profiles = [];
   loading = true;
-  userProfile = null;
+  // userProfile = null;
 
   fetchProfiles = async () => {
     try {
@@ -21,7 +21,7 @@ class ProfileStore {
     }
   };
   findProfile = async () => {
-    console.log("ProfileStore -> user", user);
+    // console.log("ProfileStore -> user", user);
     try {
       console.log("ProfileStore -> findProfile -> profiles", this.profiles);
       const userId = authStore.user.id;
@@ -36,7 +36,7 @@ class ProfileStore {
 decorate(ProfileStore, {
   profiles: observable,
   loading: observable,
-  userProfile: observable,
+  // userProfile: observable,
 });
 
 const profileStore = new ProfileStore();

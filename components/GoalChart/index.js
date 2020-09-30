@@ -13,11 +13,11 @@ import {
 } from "./styles";
 import UserGoalList from "../UserGoalList";
 
-const GoalChart = ({ navigation }) => {
+const GoalChart = ({ navigation, goals }) => {
   return (
     <StyledCard>
       <StyledTitle>Goals</StyledTitle>
-      <UserGoalList navigation={navigation} />
+      <UserGoalList goals={goals} navigation={navigation} />
     </StyledCard>
   );
 };

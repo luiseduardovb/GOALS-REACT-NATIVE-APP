@@ -43,10 +43,10 @@ class ProgressStores {
       );
 
       foundProgress.targetProgress = newProgress.targetProgress;
-      // console.log(
-      //   "ProgressStores -> updateProgress -> foundProgress.targetProgress",
-      //   foundProgress.targetProgress
-      // );
+      console.log(
+        "ProgressStores -> updateProgress -> foundProgress.targetProgress",
+        foundProgress.targetProgress
+      );
     } catch (error) {
       console.log("ProgressStores -> updateProgress -> error", error);
     }

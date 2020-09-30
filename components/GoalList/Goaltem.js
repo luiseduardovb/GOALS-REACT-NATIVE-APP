@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import UpdateGoal from "../Buttons/UpdateGoal";
 import UpdateProgress from "../Buttons/UpdateProgress";
 import FollowGoal from "../Buttons/FollowGoal";
+import ProgressBar from "../ProgressBar";
 
 // Stores
 import goalStore from "../../stores/goalStore";
@@ -23,21 +24,17 @@ import {
 } from "./Styles";
 
 const GoalItem = ({ navigation, goal, myGoals, category }) => {
-
-  const goalId = goal.id;
-
   return (
     <StyledContent>
       <StyledCard>
         <CardItem>
           <Left>
             <Text
-              onPress={(goalId) => {
+              onPress={() => {
                 navigation.navigate("Goal Detail", {
                   goal: goal,
                   myGoals: myGoals,
                 });
-                progressStore.fetchGoalProgresses(goalId);
               }}
             >
               {goal.name}

@@ -3,25 +3,17 @@ import { observer } from "mobx-react";
 import Svg, { G, Circle } from "react-native-svg";
 
 //Styles
-import { StyledView, StyledCard } from "./styles";
+import { StyledView } from "./styles";
 import { Animated, Text } from "react-native";
 
-//Stores
-import progressStore from "../../stores/progressStore";
-import authStore from "../../stores/authStore";
-
 const ProgressCircle = ({ goal }) => {
-  const { user } = authStore;
-
-  const foundProgress = progressStore.progresses
-    .filter((progress) => progress.goalId === goal.id)
-    .filter((progress) => progress.profileId === user.id);
-
-  let percentage = foundProgress[0] ? foundProgress[0].targetProgress : 0;
+  let percentage = goal.Progress.targetProgress;
+  console.log("ProgressCircle -> percentage", percentage);
   let radius = 90;
   let strokeWidth = 20;
   let color = "#e2e2e2";
   let max = goal.target;
+  console.log("ProgressCircle -> max", max);
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -29,6 +21,7 @@ const ProgressCircle = ({ goal }) => {
   const halfCircle = radius + strokeWidth;
   const circleCircumference = 2 * Math.PI * radius;
   const maxPerc = (100 * percentage) / max;
+  console.log("ProgressCircle -> maxPerc", maxPerc);
   const strokeDashoffset =
     circleCircumference - (circleCircumference * maxPerc) / 100;
 
