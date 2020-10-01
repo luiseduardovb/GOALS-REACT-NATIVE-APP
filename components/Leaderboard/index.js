@@ -19,17 +19,15 @@ const Leaderboard = ({ goal }) => {
   // console.log("Leaderboard -> goal", goal);
   const { user } = authStore;
 
-  const goalComplete = goal;
+  const LeaderboardGoal = goalStore.goals.find((_goal) => _goal.id === goal.id);
+  // console.log("Leaderboard -> found goal", LeaderboardGoal.target);
 
-  const leaderboard = goalStore.goals.find((_goal) => _goal.id === goal.id);
-  // console.log("Leaderboard -> leaderboard", leaderboard);
-
-  const something = leaderboard.profile.map((profile) => (
+  const something = LeaderboardGoal.profile.map((profiles) => (
     <LeaderboardItem
-      goal={profile}
+      profiles={profiles}
       user={user}
-      key={profile.id}
-      goalComplete={goalComplete}
+      key={profiles.id}
+      LeaderboardGoal={LeaderboardGoal}
       // progress={progress}
     />
   ));

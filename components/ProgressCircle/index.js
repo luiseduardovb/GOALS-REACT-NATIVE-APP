@@ -8,12 +8,12 @@ import { Animated, Text } from "react-native";
 
 const ProgressCircle = ({ goal }) => {
   let percentage = goal.Progress.targetProgress;
-  console.log("ProgressCircle -> percentage", percentage);
+  // console.log("ProgressCircle -> percentage", percentage);
   let radius = 90;
   let strokeWidth = 20;
   let color = "#e2e2e2";
   let max = goal.target;
-  console.log("ProgressCircle -> max", max);
+  // console.log("ProgressCircle -> max", max);
 
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -21,7 +21,7 @@ const ProgressCircle = ({ goal }) => {
   const halfCircle = radius + strokeWidth;
   const circleCircumference = 2 * Math.PI * radius;
   const maxPerc = (100 * percentage) / max;
-  console.log("ProgressCircle -> maxPerc", maxPerc);
+  // console.log("ProgressCircle -> maxPerc", maxPerc);
   const strokeDashoffset =
     circleCircumference - (circleCircumference * maxPerc) / 100;
 
