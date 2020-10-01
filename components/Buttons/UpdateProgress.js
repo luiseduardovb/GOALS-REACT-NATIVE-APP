@@ -7,7 +7,7 @@ import { Icon, Text } from "native-base";
 import { UpdateProgressButtonStyled, UpdateProgressTextStyled } from "./styles";
 
 const UpdateProgress = ({ goal }) => {
-  console.log("UpdateProgress -> goal", goal);
+  // console.log("UpdateProgress -> goal", goal);
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const oldProgress = progressStore.progresses.find(

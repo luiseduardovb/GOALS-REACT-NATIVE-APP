@@ -45,7 +45,7 @@ const Profile = ({ navigation }) => {
   const profileOwnedGoals = profileStore.profiles.find(
     (profile) => profile.userId === user.id
   );
-  console.log("Profile -> profileOwnedGoals", profileOwnedGoals);
+  // console.log("Profile -> profileOwnedGoals", profileOwnedGoals);
 
   return (
     <>

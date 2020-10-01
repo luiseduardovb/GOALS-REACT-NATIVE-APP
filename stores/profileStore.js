@@ -23,10 +23,10 @@ class ProfileStore {
   findProfile = async () => {
     // console.log("ProfileStore -> user", user);
     try {
-      console.log("ProfileStore -> findProfile -> profiles", this.profiles);
+      // console.log("ProfileStore -> findProfile -> profiles", this.profiles);
       const userId = authStore.user.id;
-      const profileIndex = this.profiles.findIndex((profile) => userId === 3);
-      console.log("ProfileStore -> findProfile -> profileIndex", profileIndex);
+      // const profileIndex = this.profiles.findIndex((profile) => userId === 3);
+      // console.log("ProfileStore -> findProfile -> profileIndex", profileIndex);
     } catch (error) {
       console.log("error", error);
     }
