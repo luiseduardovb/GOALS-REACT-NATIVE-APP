@@ -11,7 +11,7 @@ import GoalModal from "../modals/GoalModal";
 import { Icon, Text } from "native-base";
 import { AddButtonStyled, StyledTouchableOpacity } from "./styles";
 
-const AddGoal = () => {
+const AddGoal = ({ profile }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -23,7 +23,7 @@ const AddGoal = () => {
         onPress={() => setIsOpen(true)}
       >
         <AddButtonStyled size={30} type="AntDesign" name="pluscircleo" />
-        <GoalModal isOpen={isOpen} closeModal={closeModal} />
+        <GoalModal isOpen={isOpen} closeModal={closeModal} profile={profile} />
       </StyledTouchableOpacity>
     </>
   );

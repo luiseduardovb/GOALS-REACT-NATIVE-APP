@@ -4,9 +4,9 @@ import { TouchableOpacity } from "react-native";
 
 // Add Button
 export const StyledTouchableOpacity = styled.TouchableOpacity`
-  background-color: #14213d;
-  bottom: 95px;
-  right: 30px;
+  background-color: #1f1f1f;
+  bottom: 435px;
+  right: 1px;
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -16,7 +16,7 @@ export const StyledTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const AddButtonStyled = styled(Icon)`
-  color: #a88a93;
+  color: #fca311;
 `;
 export const FollowButtonStyled = styled(Icon)`
   color: black;
@@ -24,9 +24,9 @@ export const FollowButtonStyled = styled(Icon)`
 
 // Add Category
 export const AddCategorylButtonStyled = styled(Icon)`
-  color: #3d3d3d;
+  color: #fca311;
   top: 15px;
-  right: 5px;
+  right: 15px;
 `;
 
 // Update Progress

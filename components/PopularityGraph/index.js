@@ -7,8 +7,6 @@ import { StyledView } from "./styles";
 import { Animated, Text } from "react-native";
 
 const PopularityGraph = ({ goal }) => {
-  // const { goal } = route.params;
-
   let percentage = 10; /// (this would be progress.targetProgress)
   let radius = 90;
   let strokeWidth = 20;

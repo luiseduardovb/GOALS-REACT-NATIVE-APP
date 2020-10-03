@@ -35,7 +35,7 @@ export const StyledCard = styled(Card)`
   padding: 20px;
   border-radius: 25px;
   margin-top: 25px;
-  background-color: #cccccc;
+  background-color: white;
 `;
 
 export const StyledText = styled.Text`

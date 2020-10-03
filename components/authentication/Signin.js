@@ -15,7 +15,7 @@ import {
   ChangeTo,
   HomeImageBackground,
 } from "./styles";
-import { Text } from "native-base";
+import { Icon, Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Signin = ({ navigation }) => {

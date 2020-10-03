@@ -23,7 +23,17 @@ import {
   StyledImageSearch,
 } from "./Styles";
 
-const GoalItem = ({ navigation, goal, myGoals, category }) => {
+const GoalItem = ({
+  navigation,
+  goal,
+  myGoals,
+  category,
+  profileFollowedGoals,
+}) => {
+  const goalFollowStatus = profileFollowedGoals.includes(
+    (followedgoal) => followedgoal.id === goal.id
+  );
+
   return (
     <StyledContent>
       <StyledCard>
@@ -42,7 +52,7 @@ const GoalItem = ({ navigation, goal, myGoals, category }) => {
           </Left>
 
           <Right>
-            <Text>{goal.quantifiableUnits}</Text>
+            <Text>{goal.UnitOfMeasure}</Text>
             {myGoals && <UpdateGoal goal={goal} />}
           </Right>
 
@@ -53,14 +63,14 @@ const GoalItem = ({ navigation, goal, myGoals, category }) => {
             onPress={() => goalStore.followGoal(goal)}
           /> */}
 
-          {goal.followed ? (
+          {goalFollowStatus ? (
             <FollowGoal goal={goal} />
           ) : (
             <Text
-              onPress={() => goalStore.deleteGoal(goal.id)}
+              onPress={() => progressStore.unfollowGoal(goal.id)}
               style={{ fontSize: 25 }}
             >
-              -
+              Unfollow
             </Text>
           )}
         </CardItem>

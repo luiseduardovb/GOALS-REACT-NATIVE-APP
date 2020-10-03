@@ -46,6 +46,21 @@ class ProgressStores {
       console.log("ProgressStores -> updateProgress -> error", error);
     }
   };
+
+  unfollowGoal = async (goalId) => {
+    try {
+      await instance.delete(`/goals/${goalId}`);
+      this.progresses = this.progresses.filter(
+        (progress) => progress.goalId !== +goalId
+      );
+      console.log(
+        "GoalStore -> deleteGoal -> this.progresses ",
+        this.progresses
+      );
+    } catch (error) {
+      console.log("Unfollow goal error:", error);
+    }
+  };
 }
 
 decorate(ProgressStores, {

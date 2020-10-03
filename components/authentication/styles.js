@@ -77,5 +77,5 @@ export const Title = styled.Text`
 export const SighoutButton = styled(Icon)`
   bottom: 160px;
   left: 335px;
-  color: #14213d;
+  color: #fca311;
 `;
