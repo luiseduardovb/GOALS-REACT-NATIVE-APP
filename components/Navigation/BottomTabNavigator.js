@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 import { Icon } from "native-base";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -61,4 +62,4 @@ const BottomTabNavigator = ({ navigation, route }) => {
   );
 };
 
-export default BottomTabNavigator;
+export default observer(BottomTabNavigator);

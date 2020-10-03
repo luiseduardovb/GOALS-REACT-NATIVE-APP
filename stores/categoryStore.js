@@ -13,6 +13,7 @@ class Category {
         "Category -> fetchCategories -> this.categories",
         this.categories
       );
+
       this.loading = false;
     } catch (error) {
       console.log("error", error);

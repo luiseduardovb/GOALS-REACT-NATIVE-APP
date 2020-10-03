@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
 import Dashboard from "../Dashboard";
+import { observer } from "mobx-react";
 import AddGoal from "../Buttons/AddGoal";
 
 const { Navigator, Screen } = createStackNavigator();
@@ -21,4 +22,4 @@ const DashboardNavigator = () => {
   );
 };
 
-export default DashboardNavigator;
+export default observer(DashboardNavigator);

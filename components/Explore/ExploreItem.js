@@ -16,7 +16,8 @@ const ExploreItem = ({ category, navigation }) => {
   // const goals = goalStore.goals.filter(
   //   (goal) => goal.category === category.name
   // );
-
+  // const whatever = categoryStore.categories;
+  // console.log("ExploreItem -> whatever", whatever);
   return (
     <>
       <StyledView>
