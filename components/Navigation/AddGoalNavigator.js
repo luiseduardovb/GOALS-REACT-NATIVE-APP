@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
@@ -22,4 +23,4 @@ const AddGoalNavigator = () => {
   );
 };
 
-export default AddGoalNavigator;
+export default observer(AddGoalNavigator);

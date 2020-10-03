@@ -17,11 +17,14 @@ import {
 } from "./styles";
 
 const ProgressBar = ({ navigation, goal }) => {
+  let max = goal.target;
+  let percentage = (goal.Progress.targetProgress / max) * 100;
+  const maxPerc = (100 * percentage) / max;
   // const profile = authStore.userProfile.filter(
   //   (profile) => profile.id === goal.ownerId
   // );
   // console.log("ProgressBar -> userProgress", profile);
-
+  // style={{ width: `${maxPerc}%` }}
   return (
     <>
       <StyledView>

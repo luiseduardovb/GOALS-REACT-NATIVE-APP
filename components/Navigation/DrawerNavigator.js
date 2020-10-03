@@ -1,4 +1,5 @@
 import React from "react";
+import { observer } from "mobx-react";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -62,4 +63,4 @@ const DrawerNavigator = ({ navigation, route }) => {
   );
 };
 
-export default DrawerNavigator;
+export default observer(DrawerNavigator);

@@ -4,8 +4,34 @@ import { PieChart } from "react-native-chart-kit";
 
 //Styles
 import { StyledCard, StyledTitle } from "./styles";
+import categoryStore from "../../stores/categoryStore";
+import CategoryItem from "./CategoryItem";
+import { Text } from "native-base";
 
 const CategoriesPieChart = () => {
+  // let categoryList = [];
+  // let categoryList2 = [];
+
+  // let categories = categoryStore.categories.forEach((category) =>
+  //   categoryList.push(category)
+  // );
+
+  // console.log("CategoriesPieChart -> categoryList", categoryList);
+
+  // let categories2 = categoryList.find((goal) => goal);
+  // console.log("CategoriesPieChart -> categories2", categories2);
+
+  //   <>
+  //     <Text>name:{category.name}</Text>
+  //     <Text>percentage: {category.percentage}</Text>
+  //     <Text>color: {category.color}</Text>
+  //     <Text>legendFontColor:{category.legendFontColor}</Text>
+  //     <Text>legendFontSize: {category.legendFontSize}</Text>
+  //   </>
+  // ));
+
+  // console.log("CategoriesPieChart -> categories", categories);
+
   let data = [
     {
       name: "Fitness",
