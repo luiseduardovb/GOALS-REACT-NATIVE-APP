@@ -9,10 +9,10 @@ class Category {
     try {
       const response = await instance.get("/categories");
       this.categories = response.data;
-      // console.log(
-      //   "Category -> fetchCategories -> this.categories",
-      //   this.categories
-      // );
+      console.log(
+        "Category -> fetchCategories -> this.categories",
+        this.categories
+      );
       this.loading = false;
     } catch (error) {
       console.log("error", error);

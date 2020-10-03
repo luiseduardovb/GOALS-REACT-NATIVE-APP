@@ -35,7 +35,8 @@ const Explore = ({ navigation }) => {
     ));
   const goals = goalStore.goals;
   return (
-    <HomeImageBackground source={require(`../../image3.jpg`)}>
+    // <HomeImageBackground source={require(`../../image3.jpg`)}>
+    <>
       <Header transparent style={{ width: 400 }}>
         <Left />
         <SearchBar setQuery={setQuery} />
@@ -50,7 +51,8 @@ const Explore = ({ navigation }) => {
       <View style={{ marginLeft: "auto", marginRight: "auto" }}>
         {/* <GoalList goals={goals} navigation={navigation} exploreGoals /> */}
       </View>
-    </HomeImageBackground>
+    </>
+    // </HomeImageBackground>
   );
 };
 

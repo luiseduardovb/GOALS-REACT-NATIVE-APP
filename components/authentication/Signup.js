@@ -61,9 +61,7 @@ const Signup = ({ navigation }) => {
         </PressButton>
         <ChangeTo onPress={() => navigation.navigate("Signin")}>
           Already have an account?
-          <Text
-            style={{ fontWeight: "bold", color: "white", fontSize: "15px" }}
-          >
+          <Text style={{ fontWeight: "bold", color: "white", fontSize: 15 }}>
             Sign in
           </Text>
         </ChangeTo>
