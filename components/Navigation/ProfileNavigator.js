@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 import { Icon } from "native-base";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -41,4 +42,4 @@ const ProfileNavigator = ({ navigation }) => {
   );
 };
 
-export default ProfileNavigator;
+export default observer(ProfileNavigator);

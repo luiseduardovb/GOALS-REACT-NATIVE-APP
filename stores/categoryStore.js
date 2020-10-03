@@ -11,7 +11,7 @@ class Category {
       this.categories = response.data;
       // console.log(
       //   "Category -> fetchCategories -> this.categories",
-      //   this.categories
+      //   this.categories[0].Goals[0].Tag.name
       // );
       this.loading = false;
     } catch (error) {

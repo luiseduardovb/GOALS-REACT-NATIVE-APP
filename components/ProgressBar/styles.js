@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { Card } from "native-base";
 
 export const StyledView = styled.View`
-  width: 100%;
+  width: 88%;
   height: 20px;
   /* padding: 3px; */
   border-color: grey;

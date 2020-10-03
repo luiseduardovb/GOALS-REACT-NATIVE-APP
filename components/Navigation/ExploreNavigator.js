@@ -1,4 +1,5 @@
 import React from "react";
+import { observer } from "mobx-react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 //Components
@@ -45,4 +46,4 @@ const ExploreNavigator = () => {
   );
 };
 
-export default ExploreNavigator;
+export default observer(ExploreNavigator);
