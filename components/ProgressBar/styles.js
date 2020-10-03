@@ -6,7 +6,7 @@ export const StyledView = styled.View`
   height: 20px;
   /* padding: 3px; */
   border-color: grey;
-  border-width: 3;
+  border-width: 3px;
   border-radius: 20px;
   margin: auto;
   justify-content: center;

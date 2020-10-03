@@ -22,15 +22,16 @@ const Leaderboard = ({ goal }) => {
   const LeaderboardGoal = goalStore.goals.find((_goal) => _goal.id === goal.id);
   // console.log("Leaderboard -> found goal", LeaderboardGoal.target);
 
-  const something = LeaderboardGoal.profile.map((profiles) => (
-    <LeaderboardItem
-      profiles={profiles}
-      user={user}
-      key={profiles.id}
-      LeaderboardGoal={LeaderboardGoal}
-      // progress={progress}
-    />
-  ));
+  // const something = LeaderboardGoal.profile.map((profiles) => (
+  //   <LeaderboardItem
+  //     profiles={profiles}
+  //     user={user}
+  //     key={profiles.id}
+  //     LeaderboardGoal={LeaderboardGoal}
+  //     // progress={progress}
+  //   />
+  // ));
+  // console.log("Leaderboard -> something", something);
 
   // const leaderboardProgress = progressStore.goalProgresses.map((progress) => (
   //   <LeaderboardItem progress={progress} user={user} key={progress.id} />
@@ -49,7 +50,7 @@ const Leaderboard = ({ goal }) => {
       <BodyView>
         <SafeAreaView>
           <ScrollView>
-            <List>{something}</List>
+            {/* <List>{something}</List> */}
             {/* <Text>SPACE</Text>
             <List>{leaderboardProgress}</List> */}
           </ScrollView>

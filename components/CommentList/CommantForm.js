@@ -20,7 +20,7 @@ const CommentForm = ({ goal }) => {
     commentStore.createComment(comments);
     setComment({
       comment: "",
-      goalId: "",
+      goalId: goal.id,
     });
   };
 
