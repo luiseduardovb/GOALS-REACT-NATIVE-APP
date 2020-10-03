@@ -14,18 +14,16 @@ import SearchBar from "../Search/SearchBar";
 //Stores
 import categoryStore from "../../stores/categoryStore";
 import ExploreItem from "./ExploreItem";
-import goalStore from "../../stores/goalStore";
-import GoalList from "../GoalList";
 
 const Explore = ({ navigation }) => {
   const [query, setQuery] = useState("");
 
   const categoryList = categoryStore.categories
-    // .filter(
-    //   (category) =>
-    //     category.name &&
-    //     category.name.toLowerCase().includes(query.toLowerCase())
-    // )
+    .filter(
+      (category) =>
+        category.name &&
+        category.name.toLowerCase().includes(query.toLowerCase())
+    )
     .map((category) => (
       <ExploreItem
         navigation={navigation}
@@ -33,10 +31,8 @@ const Explore = ({ navigation }) => {
         key={category.id}
       />
     ));
-  const goals = goalStore.goals;
   return (
-
-    <>
+    <View style={{ backgroundColor: "#1F1F1F", height: 1000 }}>
       {/* // <HomeImageBackground source={require(`../../image3.jpg`)}> */}
       <Header transparent style={{ width: 400 }}>
         <Left />
@@ -49,13 +45,15 @@ const Explore = ({ navigation }) => {
           <HeaderWrapperView>{categoryList}</HeaderWrapperView>
         </ScrollView>
       </SafeAreaView>
-      <View style={{ marginLeft: "auto", marginRight: "auto" }}>
+      {/* <View style={{ marginLeft: "auto", marginRight: "auto" }}>
+        {isZah? 
         <GoalList goals={goals} navigation={navigation} exploreGoals />
-      </View>
-
+        : ()
+      }
+      </View> */}
 
       {/* </HomeImageBackground> */}
-    </>
+    </View>
   );
 };
 

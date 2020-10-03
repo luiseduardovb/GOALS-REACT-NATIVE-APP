@@ -26,15 +26,12 @@ const ProfileNavigator = ({ navigation }) => {
         name="Goal Detail"
         component={GoalDetail}
         options={({ route }) => {
-          const goal = route.params.goal;
           return {
-            title: goal.name,
+            title: route.params.goal.name,
             headerStyle: {
               backgroundColor: "#A88A93",
             },
             headerTintColor: "#fff",
-            // headerTransparent: true,
-            // headerBackTitle: false,
           };
         }}
       />

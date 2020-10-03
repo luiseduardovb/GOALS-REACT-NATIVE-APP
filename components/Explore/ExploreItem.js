@@ -9,23 +9,39 @@ import categoryStore from "../../stores/categoryStore";
 
 //Styles
 import { StyledView, ItemsStyled, ItemsTextStyled } from "./styles";
-import { Icon, Button } from "native-base";
+import { Icon, Button, List, View } from "native-base";
 import goalStore from "../../stores/goalStore";
+import Dashboard from "../Dashboard";
 
 const ExploreItem = ({ category, navigation }) => {
-  // const goals = goalStore.goals.filter(
-  //   (goal) => goal.category === category.name
-  // );
-  // const whatever = categoryStore.categories;
-  // console.log("ExploreItem -> whatever", whatever);
+  const [isZah, setIsZah] = useState(false);
+
+  const handlePress = () => {
+    setIsZah(!isZah);
+  };
+
+  const goal = goalStore.goals;
+
+  const whatever = category.Goals.filter(
+    (goal) => goal.Tag.catId === category.id
+  );
+
   return (
     <>
       <StyledView>
         <ItemsStyled>
-          <ItemsTextStyled>{category.name}</ItemsTextStyled>
+          <ItemsTextStyled onPress={handlePress}>
+            {category.name}
+          </ItemsTextStyled>
         </ItemsStyled>
       </StyledView>
-      {/* <GoalList goals={goals} navigation={navigation} exploreGoals /> */}
+      {/* <List>{whatever}</List> */}
+      {isZah ? (
+        <GoalList goals={whatever} navigation={navigation} exploreGoals />
+      ) : (
+        <GoalList goals={goal} navigation={navigation} exploreGoals />
+      )}
+      <Dashboard category={category} />
     </>
   );
 };

@@ -1,9 +1,11 @@
 import { decorate, observable } from "mobx";
 import categoryStore from "./categoryStore";
 import instance from "./instance";
+import profileStore from "./profileStore";
 
 class GoalStore {
   goals = [];
+  followedGoals = [];
   loading = true;
 
   fetchGoals = async () => {
@@ -15,16 +17,27 @@ class GoalStore {
       console.log("error", error);
     }
   };
-
-  createGoal = async (newGoal) => {
+  fetchFollowedGoals = async () => {
     try {
-      const formData = new FormData();
-      for (const key in newGoal) formData.append(key, newGoal[key]);
-      const res = await instance.post("/goals", formData);
-      categoryStore.categories.push(newGoal.category);
-      this.goals.push(res.data);
+      const response = await instance.get("/goals");
+      this.goals = response.data;
+      this.loading = false;
     } catch (error) {
       console.log("error", error);
+    }
+  };
+
+  createGoal = async (newGoal, profile) => {
+    // console.log("GoalStore -> createGoal -> profile", profile[0].Progress);
+    try {
+      const res = await instance.post("/goals", newGoal);
+      categoryStore.categories.push(newGoal.category);
+      const goal = res.data;
+      this.goals.push(goal);
+      profile.goal.push(goal);
+      // progress.goal.push({ goalId: goal.id });
+    } catch (error) {
+      console.log("Create goal error", error);
     }
   };
 
@@ -36,16 +49,7 @@ class GoalStore {
       const goal = this.goals.find((goal) => goal.id === updatedGoal.id);
       for (const key in updatedGoal) goal[key] = updatedGoal[key];
     } catch (error) {
-      console.log("error:", error);
-    }
-  };
-
-  deleteGoal = async (GoalId) => {
-    try {
-      await instance.delete(`/goals/${GoalId}`);
-      this.goals = this.goals.filter((goal) => goal.id !== GoalId);
-    } catch (error) {
-      console.log("error:", error);
+      console.log("Update goal error:", error);
     }
   };
 

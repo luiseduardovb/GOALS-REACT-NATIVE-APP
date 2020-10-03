@@ -21,19 +21,19 @@ export const ProfileImage = styled(Image)`
 export const Name = styled.View`
   flex-direction: row;
   margin-bottom: 3px;
-  color: black;
+  color: white;
 `;
 
 export const FirstName = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: black;
+  color: white;
 `;
 
 export const LastName = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: black;
+  color: white;
 `;
 
 export const StyledView = styled.View`

@@ -33,6 +33,7 @@ const GoalDetail = ({ route }) => {
   const comments = commentStore.comments.filter(
     (comment) => comment.goalId === goal.id
   );
+
   return (
     <>
       <SafeAreaView>

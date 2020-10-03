@@ -29,36 +29,40 @@ const Profile = ({ navigation }) => {
 
   if (!user) return <Spinner />;
 
-  const profileOwnedGoals = profileStore.profiles.find(
+  const profile = profileStore.profiles.find(
     (profile) => profile.userId === user.id
   );
-
+  const profileFollowedGoals = profile && profile.goal;
   return (
     <>
-      <SafeAreaView>
-        <ScrollView>
+      <SafeAreaView style={{ backgroundColor: "#1F1F1F", height: 1000 }}>
+        <ScrollView style={{ paddingBottom: 10 }}>
           <UserInfo>
             <Body>
               <ProfileImage
                 source={{
                   uri:
-                    "https://wincomm-cdn-prod-westus.azureedge.net/libs/assets/img/default-user-placeholder.png",
+                    "https://cdn.discordapp.com/attachments/747484451793010792/762001699312893952/PinClipart.com_appliance-repair-clipart_4968268_1.png",
                 }}
               />
               <Name>
                 <FirstName>{user.firstName}</FirstName>
                 <LastName> {user.lastName}</LastName>
               </Name>
-              <Text>@{user.username}</Text>
+              <Text style={{ color: "white" }}>@{user.username}</Text>
             </Body>
             <Signout />
           </UserInfo>
           <StyledView>
-            <GoalList goals={profileOwnedGoals.goal} navigation={navigation} />
+            <GoalList
+              profileFollowedGoals={profileFollowedGoals}
+              goals={profileFollowedGoals}
+              navigation={navigation}
+            />
           </StyledView>
         </ScrollView>
       </SafeAreaView>
-      <AddGoal />
+      <AddGoal profile={profile} />
     </>
   );
 };

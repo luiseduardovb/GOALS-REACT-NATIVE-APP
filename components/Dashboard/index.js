@@ -13,17 +13,18 @@ import profileStore from "../../stores/profileStore";
 import { StyledView } from "./styles";
 import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import categoryStore from "../../stores/categoryStore";
 
-const Dashboard = ({ navigation }) => {
+const Dashboard = ({ navigation, category }) => {
   const profileOwnedGoals = profileStore.profiles.find(
     (profile) => profile.userId === authStore.user.id
   );
 
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <SafeAreaView style={{ backgroundColor: "#1F1F1F", height: 1000 }}>
+      <ScrollView style={{ marginTop: 30 }}>
         <GoalChart goals={profileOwnedGoals.goal} navigation={navigation} />
-        <CategoriesPieChart />
+        <CategoriesPieChart category={category} />
       </ScrollView>
     </SafeAreaView>
   );

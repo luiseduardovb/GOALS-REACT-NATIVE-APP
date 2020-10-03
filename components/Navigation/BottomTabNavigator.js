@@ -17,10 +17,10 @@ const BottomTabNavigator = ({ navigation, route }) => {
     <Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        inactiveTintColor: "#525252",
-        activeTintColor: "#525252",
-
-        activeBackgroundColor: "#707070",
+        inactiveTintColor: "#FCA311",
+        activeTintColor: "#FCA311",
+        activeBackgroundColor: "#F5F5F5",
+        inactiveBackgroundColor: "#1F1F1F",
       }}
     >
       <Screen
@@ -30,7 +30,13 @@ const BottomTabNavigator = ({ navigation, route }) => {
           title: user.username,
           onPress: () => navigation.navigate("Profile"),
 
-          tabBarIcon: () => <Icon name="user-alt" type="FontAwesome5" />,
+          tabBarIcon: () => (
+            <Icon
+              name="user-alt"
+              type="FontAwesome5"
+              style={{ color: "#FCA311" }}
+            />
+          ),
         }}
       />
       <Screen
@@ -38,7 +44,13 @@ const BottomTabNavigator = ({ navigation, route }) => {
         component={DashboardNavigator}
         options={{
           onPress: () => navigation.navigate("Dashboard"),
-          tabBarIcon: () => <Icon name="dashboard" type="AntDesign" />,
+          tabBarIcon: () => (
+            <Icon
+              name="dashboard"
+              type="AntDesign"
+              style={{ color: "#FCA311" }}
+            />
+          ),
         }}
       />
       <Screen
@@ -46,7 +58,9 @@ const BottomTabNavigator = ({ navigation, route }) => {
         component={ExploreNavigator}
         options={{
           onPress: () => navigation.navigate("Explore"),
-          tabBarIcon: () => <Icon name="search" type="Ionicons" />,
+          tabBarIcon: () => (
+            <Icon name="search" type="Ionicons" style={{ color: "#FCA311" }} />
+          ),
         }}
       />
 

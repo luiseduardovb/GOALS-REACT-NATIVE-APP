@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { View, Right, Left } from "native-base";
+import { View, Right, Left, Icon } from "native-base";
 
 // Styles
 import { ListWrapperView, StyledRow, StyledProgressView } from "./styles";
@@ -29,6 +29,7 @@ const LeaderboardItem = ({ navigation, LeaderboardGoal, profiles }) => {
   return (
     <ListWrapperView>
       <Left>
+        <Icon type="Ionicons" name="person" />
         <StyledRow style={{ paddingHorizontal: 20, paddingVertical: 5 }}>
           {authStore.user.username}
         </StyledRow>

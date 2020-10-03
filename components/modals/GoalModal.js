@@ -16,8 +16,9 @@ import {
   ModalTextInput,
   ModalView,
 } from "./styles";
+import Profile from "../Profile";
 
-const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
+const GoalModal = ({ isOpen, closeModal, oldGoal, navigation, profile }) => {
   const [goal, setGoal] = useState(
     oldGoal ?? {
       name: "",
@@ -45,7 +46,7 @@ const GoalModal = ({ isOpen, closeModal, oldGoal, navigation }) => {
                 text: "Go back",
               },
             ])
-          : goalStore.createGoal(goal);
+          : goalStore.createGoal(goal, profile);
         setGoal({
           name: "",
           description: "",

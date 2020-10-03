@@ -7,7 +7,14 @@ import { ScrollView } from "react-native-gesture-handler";
 import GoalItem from "./Goaltem";
 import SearchBar from "../Search/SearchBar";
 
-const GoalList = ({ navigation, goals, category, myGoals, exploreGoals }) => {
+const GoalList = ({
+  navigation,
+  goals,
+  category,
+  myGoals,
+  exploreGoals,
+  profileFollowedGoals,
+}) => {
   const [query, setQuery] = useState("");
 
   const goalList = goals
@@ -18,6 +25,8 @@ const GoalList = ({ navigation, goals, category, myGoals, exploreGoals }) => {
         key={goal.id}
         myGoals={myGoals}
         navigation={navigation}
+        category={category}
+        profileFollowedGoals={profileFollowedGoals}
       />
     ));
 

@@ -6,9 +6,15 @@ import { PieChart } from "react-native-chart-kit";
 import { StyledCard, StyledTitle } from "./styles";
 import categoryStore from "../../stores/categoryStore";
 import CategoryItem from "./CategoryItem";
-import { Text } from "native-base";
+import { Spinner, Text } from "native-base";
 
-const CategoriesPieChart = () => {
+const CategoriesPieChart = ({ category }) => {
+  // console.log("CategoriesPieChart -> category", category);
+  // if (!category) return <Spinner />;
+  // const whatever = category.Goals.filter((goal) => goal.Tag.catId === 2);
+
+  // const leng = whatever.length;
+  // console.log("CategoriesPieChart -> leng", leng);
   // let categoryList = [];
   // let categoryList2 = [];
 
